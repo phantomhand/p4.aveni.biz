@@ -50,9 +50,18 @@ class films_controller extends base_controller {
             films.director_2,
             films.director_3,
             films.director_4,
-            films.description
+            films.producer_1,
+            films.producer_2,
+            films.color,
+            films.running_time_1,
+            films.running_time_2,
+            films.year_released,
+            films.description,
+            films.inst_price,
+            films.home_price,
+            films.image
         FROM films
-        ORDER BY films.title DESC';
+        ORDER BY films.title ASC';
 	
 	    # Run the query
 	    $films = DB::instance(DB_NAME)->select_rows($q);

@@ -17,7 +17,7 @@
 				<!-- <input type="text" placeholder="Year created" name='year_created' class="form-control"> -->
 				<input type="text" placeholder="Year of release" name='year_released' class="form-control">
 				<!-- <input type="text" placeholder="Running time 2" name='running_time_2' class="form-control"> -->
-				<input type="text" placeholder="Language" name='language_1' class="form-control" required>
+				<input type="text" placeholder="Language" name='language_1' class="form-control">
 				<!-- <input type="text" placeholder="Language 2" name='language_2' class="form-control"> -->
 				<!-- <input type="text" placeholder="Language 3" name='language_2' class="form-control"> -->
 				<input type="text" placeholder="Subtitles" name='subtitle_lang_1' class="form-control">
@@ -31,7 +31,7 @@
 				<input type="text" placeholder="Description" name='description' class="form-control" required>
 				<input type="text" placeholder="Institutional price" name='inst_price' class="form-control" required>
 				<input type="text" placeholder="Home use price" name='home_price' class="form-control">
-				<!-- <input type="text" placeholder="Image" name='image' class="form-control"> -->
+				<input type="text" placeholder="Image" name='image' class="form-control">				
 				<br>
 				<button class="btn btn-lg btn-primary btn-block" value='Add Film' type="submit">Add Film</button>
 			</form>
