@@ -19,7 +19,7 @@ class index_controller extends base_controller {
 			$this->template->content = View::instance('v_index_index');
 			
 		# Now set the <title> tag
-			$this->template->title = "Hello World";
+			$this->template->title = "Documentary Educational Resources | Quality Non-Fiction, Documentary, and Ethnographic Films from Around the World";
 	
 		# CSS/JS includes
 			/*
@@ -27,8 +27,12 @@ class index_controller extends base_controller {
 	    	$this->template->client_files_head = Utils::load_client_files($client_files);
 	    	
 	    	$client_files_body = Array("");
-	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);   
-	    	*/
+	    	$this->template->client_files_body = Utils::load_client_files($client_files_body);
+			*/   
+	    	
+	    	# Pass in template-specific CSS files
+	   		$this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+	   											  <link rel="stylesheet" href="/css/jumbotron.css" type="text/css">';
 	      					     		
 		# Render the view
 			echo $this->template;
