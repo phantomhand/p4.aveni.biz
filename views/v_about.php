@@ -1,34 +1,67 @@
-<aside id="featured" class="body">
-	<article>
-		<h2>About Documentary Educational Resources</h2>
-		
-			<p>Blabbr is the micro-blog project of Frank Aveni.</p>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="container">	
+	
+			<h2>About</h2>
+			<hr style="width: 94%; margin-left: -2px;">
 			
-			<p>Users can:
-				<ol>
-					<li>Sign up</li>
-					<li>Log in</li>
-					<li>Log out</li>
-					<li>Add posts</li>
-					<li>See a list of all other users</li>
-					<li>Follow and unfollow other users</li>
-					<li>View a stream of posts from the users they follow</li>
-					<li>Upload a user image</li>
-					<li>Delete their posts</li>
-				</ol>			
-			</p>
-			
-			<p>The site has a landing page, a navigation menu, and a note in the footer which identifies the two +1 features (numbers 8 and 9 above).</p>
-			
-			<p>The log in and sign up forms are checked for errors on the client side by HTML5, and on the server side by PHP and MySQL, preventing unauthorized log ins, and stopping existing users from signing up again (a prompt to log in is offered instead).</p>
-			
-			</p>Once logged in, the home page converts to a dashboard view which welcomes the user and offers him or her a list of things to do on the site.</p>
-			
-			<p>Users can add a new "Blabb" from the top of the "Blabbstream" page, or from within their profile page. Users are set to automatically follow their own posts by default, but this can be turned off in the user list. The logged-in user will see a button allowing them to delete their unwanted posts.</p>
-			
-			<p>The site has been checked as valid HTML5.</p>
-			
-			<p>Thank you to all the TF's and other students who helped me with this project.</p>
-			
-	</article>
-</aside>
+			<strong>About DER:</strong><br />
+				<div class="index-by-area-menu">
+				<a href="#mission">Mission</a> |
+				<a href="#guiding">Guiding Principles</a> |
+				<a href="#activities">Key Activities</a>
+				</div>
+				
+				
+				<hr style="width: 94%; margin-left: -2px;">
+
+				<div class="about">
+				<a name="mission"/></a>
+				<h2>Mission</h2>
+				
+				<p>DER's mission is to promote thought-provoking documentary film and media for learning about the people and cultures of the world.</p>
+				
+				<hr style="width: 94%; margin-left: -2px;">
+						
+				<a name="guiding"/></a>
+				<h2>Guiding Principles</h2>
+				
+				<h5>Cross-cultural Understanding</h5> 
+				<p>We believe that film and media offer powerful opportunities for engaging emotions and intellect, altering preconceptions, and fostering tolerance and understanding about people and the diverse cultures of the world.</p> 
+				
+				<h5>Innovation and Authenticity in Storytelling and Cinematic Representation</h5>
+				<p>We value films that convey the complexity of human social and cultural relations, using the rich opportunities for storytelling and cinematic representation afforded by the media available, and based on respectful relationships between filmmakers and subjects.</p>
+				
+				<h5>Access and Preservation</h5>
+				<p>We believe that providing access to non-fiction films for both scholarly and general audiences is an important contribution to the stewardship of our historical and cultural memory.</p> 
+				
+				<h5>Integrity</h5>
+				<p>We believe in the importance of connecting filmmakers and audiences, and in maintaining high professional standards in the quality of our products and in our interactions with filmmakers, educators, and our professional community.</p>
+				
+				<hr style="width: 94%; margin-left: -2px;">
+				
+				<a name="activities"/></a>
+				<h2>Key Activities</h2>  
+				
+				<h5>Access and Distribution:</h5>
+				
+				<p>&bull; We represent films with enduring value as documents of human societies and cultures, that portray unique subjectivities, record diverse cultural practices and beliefs, and offer insights into the processes underlying social and cultural continuity and change. We look for films that reflect deep cultural knowledge, whether through research or the close collaboration of filmmaker and subjects.</p>
+				
+				<p>&bull; We strive to build a collection that spans diverse filmmaking genres and styles and includes seminal works in the history of ethnographic filmmaking, v&#233;rit&#233; and personal documentary, and other forms of experimental and non-fiction filmmaking, as well as contemporary works of excellence.</p> 
+				
+				<p>&bull; We embrace new technology in order to make these resources available to the widest possible audience, as we recognize the distinct value our materials offer scholars as well as the general public. We make special efforts to share our films with the people whose lives have been documented and their descendants.</p>
+				
+				<p>&bull; We seek out opportunities to extend the learning connected with the films in our collection.  This can include development and dissemination of educator and discussion guides, partnerships with school and community organizations, and creation of supporting materials available on a content-rich website.</p>
+				
+				<h5>Filmmaker Support:</h5>
+				
+				<p>&bull; Through fiscal sponsorship, workshops and consulting, we support filmmakers who use media in the documentation of social and cultural practices, processes and beliefs.</p>
+				
+				<p>&bull; We often work with filmmakers with a longstanding relationship to the communities and individuals with which they work and/or whose work is grounded in research or scholarly discourses.</p>  
+				
+				<p>&bull; We work with filmmakers to make available the highest quality versions of their films, by identifying and mastering new versions of significant historical titles including those not previously released on contemporary video formats and releasing works that have fallen out of distribution.</p>
+				
+				<p>&bull; We frequently work with filmmakers to produce discussion and study guides, as well as other materials to extend learning related to their films.</p> 
+				</div> <!-- end about div -->
+				
+			</div>
