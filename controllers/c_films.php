@@ -35,9 +35,37 @@ class films_controller extends base_controller {
         # Redirect to same page (to refresh)
 	    Router::redirect("/films");      
     }   
-    
-	public function index() {	
-	    # Set up the View
+ 
+ 
+// // Work in progress -- Link films to their own view by id
+	public function id($unique_id = NULL) {
+		if ($unique_id != NULL && is_numeric($unique_id)) {
+	      // View film by id
+	      $this->template->content = View::instance('v_films_id');
+	      // Get the film
+	      $query = 'SELECT * 
+	           FROM films
+	           WHERE unique_id = ' . $unique_id;
+	
+	      $film = DB::instance(DB_NAME)->select_row($query);
+	      // Correct sanatization backslashes
+	      if (is_array($film)) {
+	        foreach($film as $key => $value) {
+	          if (is_string($value)) {
+	            $film[$key] = stripslashes($value);
+	          }
+	        }
+	      }
+	      // Set the user
+	      $this->template->content->user = $film;
+	      // Set the title 
+	      $this->template->title = $this->template->content->films['title'];
+	      }
+	      }	 
+// //
+ 
+	public function index() {	 
+ 	    # Set up the View
 	    $this->template->content = View::instance('v_films_index');
 	    $this->template->title   = "Films";
 	
@@ -73,8 +101,7 @@ class films_controller extends base_controller {
 	    echo $this->template;
 	}
 	
-		public function users() {
-	
+	public function users() {
 	    # Set up the View
 	    $this->template->content = View::instance("v_films_users");
 	    $this->template->title   = "Users";
@@ -108,8 +135,7 @@ class films_controller extends base_controller {
 	    echo $this->template;
 	}
 	
-		public function follow($user_id_followed) {
-	
+	public function follow($user_id_followed) {
 	    # Prepare the data array to be inserted
 	    $data = Array(
 	        "created" => Time::now(),
@@ -121,18 +147,15 @@ class films_controller extends base_controller {
 	    DB::instance(DB_NAME)->insert('users_users', $data);
 	
 	    # Send them back
-	    Router::redirect("/posts/users");
-	
+	    Router::redirect("/films/users");	
 	}
 	
-		public function unfollow($user_id_followed) {
-	
+	public function unfollow($user_id_followed) {
 	    # Delete this connection
 	    $where_condition = 'WHERE user_id = '.$this->user->user_id.' AND user_id_followed = '.$user_id_followed;
 	    DB::instance(DB_NAME)->delete('users_users', $where_condition);
 	
 	    # Send them back
-	    Router::redirect("/posts/users");
-	
+	    Router::redirect("/films/users");	
 	}
 }
