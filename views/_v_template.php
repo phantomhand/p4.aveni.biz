@@ -27,7 +27,6 @@
 	</head>
 	
 	<body>
-	
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
@@ -43,7 +42,7 @@
                 			<?php endif; ?>
                 		</li>
                 		<?php if($user->access_level == 3): ?>
-                			<li><a href="/users/admin">Admin</a></li>
+                			<li><a class="admin" href="/admin">Admin</a></li>
                 		<?php endif; ?></li>
 	                		<li><a href="/films">Films</a></li>
 							<li><a href="/about">About</a></li>
@@ -62,7 +61,7 @@
 			</div>
 		</div>
 		
-		<div class="container">
+		<div class="content container">
 		<!-- CONTENT GOES HERE -->
 		<?php if(isset($content)) echo $content; ?>
 		
