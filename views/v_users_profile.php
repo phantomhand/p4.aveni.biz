@@ -10,7 +10,7 @@
 			<strong>Email:</strong> <?=$user->email?><br>
 			
 			<form method='POST' action='/posts/p_add'>
-				<label for='content'><b>Add a new post:</b></label><br>
+				<label for='content'><b>Add a new post</b></label><br>
 				<textarea style="width: 400px; height: 80px;" name="content" id='content'></textarea>
 				<br>
 				<br>
@@ -20,18 +20,19 @@
 		
 		<br>
 		<div class="col-lg-6">
+			<label for="content">Your profile image</label><br>
 			<?php if ( ($user->image == NULL) ): ?> 
-				<img class="avatar-lg" src="/images/avatar-question.jpg" alt="User Pic" height="200" width="200"/>
+				<img class="avatar-lg" src="/images/avatar-question.jpg" alt="User Pic" height="150" width="150"/>
+				<br>
 			
 			<?php elseif (isset ($user->image) ): ?>
-				<img class="avatar-lg" src="<?=$user->image?>" alt="User Pic" height="200" width="200"/>
+				<img class="avatar-lg" src="<?=$user->image?>" alt="User Pic" height="150" width="150"/>
+				<br>
 			<?php endif; ?>			
-					
-				<label for="content">Update your profile image</label>
+				
 				<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
-					<input type='file' name='image'>
-
-					<input type='submit' value='Submit' class="btn btn-primary">
+					<input type='file' class="input-xlarge" name='image'>
+					<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
 				</form>
 		</div>
 		
