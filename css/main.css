@@ -1,3 +1,7 @@
+body {
+	background-color: #fff !important; /* #00A0DF */
+}
+
 .content {
 	position: relative;
 	top: 100px;
