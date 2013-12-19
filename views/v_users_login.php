@@ -14,7 +14,7 @@
 				<?php if (isset ($error) ): ?>
 					<br>
 					<div class='error'>
-					Login failed. Please double check your email and password.
+					<p>Login failed. Please double check your email and password and try again.</p>
 					</div>
 					<br>
 				<?php endif; ?>

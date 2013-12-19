@@ -67,6 +67,9 @@ class users_controller extends base_controller {
 	    # Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
 	    									  <link rel="stylesheet" href="/css/signin.css" type="text/css">';
+	    
+	    # Pass in template-specific JS files									  
+	    $this->template->client_files_head .= '<script type="text/javascript" src="/bootstrap/js/alert.js"></script>';
 		
 	    # Pass data to the view
 	    $this->template->content->error = $error;
