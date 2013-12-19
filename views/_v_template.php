@@ -42,9 +42,16 @@
                 			<?php endif; ?>
                 		</li>
                 		<?php if($user->access_level == 3): ?>
-                			<li><a class="admin" href="/admin">Admin</a></li>
+                			<li><a class="admin" href="/admin">ADMIN</a></li>
                 		<?php endif; ?></li>
 	                		<li><a href="/films">Films</a></li>
+	                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span>
+</a>
+	                			<ul class="dropdown-menu">
+	                				<li><a href="/posts/users">Users</a></li>
+	                				<li><a <a href="/posts">Posts</a></li>
+	                			</ul>
+	                		</li>
 							<li><a href="/about">About</a></li>
 	                		<li><a href="/users/profile">My Profile</a></li>
 	                		<li><a href="/users/logout">Log Out</a></li>
@@ -52,6 +59,7 @@
                 		<!-- Menu options for users who are not logged in -->
                         <?php else: ?>
 	                        <li><a href="/films">Films</a></li>
+	                        <li><a href="/posts">Community</a></li>
 							<li><a href="/about">About</a></li>
 							<li><a href="/users/signup">Sign Up</a></li>
 							<li><a href="/users/login">Log In</a></li>
@@ -80,6 +88,6 @@
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-		<script src="../../dist/js/bootstrap.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>
