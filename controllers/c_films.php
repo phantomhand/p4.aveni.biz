@@ -36,34 +36,6 @@ class films_controller extends base_controller {
 	    Router::redirect("/films");      
     }   
  
- 
-// // Work in progress -- Link films to their own view by id
-	public function id($unique_id = NULL) {
-		if ($unique_id != NULL && is_numeric($unique_id)) {
-	      // View film by id
-	      $this->template->content = View::instance('v_films_id');
-	      // Get the film
-	      $query = 'SELECT * 
-	           FROM films
-	           WHERE unique_id = ' . $unique_id;
-	
-	      $film = DB::instance(DB_NAME)->select_row($query);
-	      // Correct sanatization backslashes
-	      if (is_array($film)) {
-	        foreach($film as $key => $value) {
-	          if (is_string($value)) {
-	            $film[$key] = stripslashes($value);
-	          }
-	        }
-	      }
-	      // Set the user
-	      $this->template->content->user = $film;
-	      // Set the title 
-	      $this->template->title = $this->template->content->films['title'];
-	      }
-	      }	 
-// //
- 
 	public function index() {	 
  	    # Set up the View
 	    $this->template->content = View::instance('v_films_index');
@@ -71,25 +43,25 @@ class films_controller extends base_controller {
 	
 	    # Build the query
 	    $q = 'SELECT
-	    	films.unique_id, 
-            films.title,
-            films.alt_title,
-            films.director_1,
-            films.director_2,
-            films.director_3,
-            films.director_4,
-            films.producer_1,
-            films.producer_2,
-            films.color,
-            films.running_time_1,
-            films.running_time_2,
-            films.year_released,
-            films.description,
-            films.inst_price,
-            films.home_price,
-            films.image
-        FROM films
-        ORDER BY films.title ASC';
+			films.unique_id, 
+			films.title,
+			films.alt_title,
+			films.director_1,
+			films.director_2,
+			films.director_3,
+			films.director_4,
+			films.producer_1,
+			films.producer_2,
+			films.color,
+			films.running_time_1,
+			films.running_time_2,
+			films.year_released,
+			films.description,
+			films.inst_price,
+			films.home_price,
+			films.image
+				FROM films
+				ORDER BY films.title ASC';
 	
 	    # Run the query
 	    $films = DB::instance(DB_NAME)->select_rows($q);
@@ -100,62 +72,51 @@ class films_controller extends base_controller {
 	    # Render the View
 	    echo $this->template;
 	}
+
+
+// Renders view, returns 	
+// // Work in progress -- Link films to their own view by id
+	public function id($unique_id = NULL) {		
+	      // View film by id
+	      $this->template->content = View::instance('v_films_id');
+	      $this->template->title   = "TITLE";
+	      
+	      # Build the query
+	      $q = 'SELECT *
+	           FROM films
+	           WHERE unique_id = unique_id';
 	
-	public function users() {
-	    # Set up the View
-	    $this->template->content = View::instance("v_films_users");
-	    $this->template->title   = "Users";
+		# Run the query
+	    $film = DB::instance(DB_NAME)->select_rows($q);
 	
-	    # Build the query to get all the users
-	    $q = "SELECT *
-	        FROM users
-	        ORDER by last_name";
+	    # Pass data to the View
+	    $this->template->content->films = $film;
 	
-	    # Execute the query to get all the users. 
-	    # Store the result array in the variable $users
-	    $users = DB::instance(DB_NAME)->select_rows($q);
-	
-	    # Build the query to figure out what connections does this user already have? 
-	    # I.e. who are they following
-	    $q = "SELECT * 
-	        FROM users_users
-	        WHERE user_id = ".$this->user->user_id;
-	
-	    # Execute this query with the select_array method
-	    # select_array will return our results in an array and use the "users_id_followed" field as the index.
-	    # This will come in handy when we get to the view
-	    # Store our results (an array) in the variable $connections
-	    $connections = DB::instance(DB_NAME)->select_array($q, 'user_id_followed');
-	
-	    # Pass data (users and connections) to the view
-	    $this->template->content->users       = $users;
-	    $this->template->content->connections = $connections;
-	
-	    # Render the view
+	    # Render the View
 	    echo $this->template;
-	}
+	      	}
+// //
+
+
+// CRUZ's version
+// // Work in progress -- Link films to their own view by id
+	//public function id($films[unique_id]) {		
+	      // View film by id
+	      //$this->template->content = View::instance('v_films_id');
+	      //$this->template->title   = "TITLE";
+	      
+	      # Build the query
+	      //$q = 'SELECT row
+	          // FROM films
+	          // WHERE unique_id = $films[unique_id]';
 	
-	public function follow($user_id_followed) {
-	    # Prepare the data array to be inserted
-	    $data = Array(
-	        "created" => Time::now(),
-	        "user_id" => $this->user->user_id,
-	        "user_id_followed" => $user_id_followed
-	        );
+		# Run the query
+	    //$film = DB::instance(DB_NAME)->select_rows($q);
 	
-	    # Do the insert
-	    DB::instance(DB_NAME)->insert('users_users', $data);
+	    # Pass data to the View
+	   // $this->template->content->films = $film;
 	
-	    # Send them back
-	    Router::redirect("/films/users");	
-	}
-	
-	public function unfollow($user_id_followed) {
-	    # Delete this connection
-	    $where_condition = 'WHERE user_id = '.$this->user->user_id.' AND user_id_followed = '.$user_id_followed;
-	    DB::instance(DB_NAME)->delete('users_users', $where_condition);
-	
-	    # Send them back
-	    Router::redirect("/films/users");	
-	}
+	    # Render the View
+	    //echo $this->template;
+	      	//}
 }
