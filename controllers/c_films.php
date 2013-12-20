@@ -8,7 +8,7 @@ class films_controller extends base_controller {
     public function add() {
         # Setup view
         $this->template->content = View::instance('v_films_add');
-        $this->template->title   = "New Film";
+        $this->template->title   = "Add New Film";
         
         # Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
@@ -74,49 +74,27 @@ class films_controller extends base_controller {
 	}
 
 
-// Renders view, returns 	
-// // Work in progress -- Link films to their own view by id
-	public function id($unique_id = NULL) {		
-	      // View film by id
-	      $this->template->content = View::instance('v_films_id');
-	      $this->template->title   = "TITLE";
-	      
-	      # Build the query
-	      $q = 'SELECT *
-	           FROM films
-	           WHERE unique_id = unique_id';
+
+	public function id($unique_id) {				
+		# Link films to view by database id
+		$this->template->content = View::instance('v_films_id');
+		
+		# Build the query
+		$q = 'SELECT *
+		   FROM films
+		   WHERE unique_id =' . $unique_id;
 	
 		# Run the query
-	    $film = DB::instance(DB_NAME)->select_rows($q);
+	    $film = DB::instance(DB_NAME)->select_row($q);
 	
 	    # Pass data to the View
-	    $this->template->content->films = $film;
+	    $this->template->content->film = $film;
 	
+		# Use the DB title as the page title 
+		$this->template->title   = "DER Film | ". $film['title'];
+		
 	    # Render the View
 	    echo $this->template;
-	      	}
-// //
+	}
 
-
-// CRUZ's version
-// // Work in progress -- Link films to their own view by id
-	//public function id($films[unique_id]) {		
-	      // View film by id
-	      //$this->template->content = View::instance('v_films_id');
-	      //$this->template->title   = "TITLE";
-	      
-	      # Build the query
-	      //$q = 'SELECT row
-	          // FROM films
-	          // WHERE unique_id = $films[unique_id]';
-	
-		# Run the query
-	    //$film = DB::instance(DB_NAME)->select_rows($q);
-	
-	    # Pass data to the View
-	   // $this->template->content->films = $film;
-	
-	    # Render the View
-	    //echo $this->template;
-	      	//}
-}
+} # end of the class
