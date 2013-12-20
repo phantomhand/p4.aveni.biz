@@ -136,7 +136,14 @@ a.navbar-brand {
 }
 
 .avatar-lg {
-	border: 2px solid #EEE;
+	border: 1px solid #ddd;
+	float: right;
+	margin-right: 5% !important;
+	margin-top: -7% !important;
+}
+
+.id-profile {
+	background: #eee;
 }
 
 .avatar {
