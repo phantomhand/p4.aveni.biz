@@ -184,7 +184,30 @@ class users_controller extends base_controller {
         Router::redirect('/users/profile');
  	}
  	
- 	public function p_add_bio() {
+ 	public function id($user_id) {				
+		// Link films to view by database id
+		$this->template->content = View::instance('v_users_id');
+		
+		# Build the query
+		$q = 'SELECT *
+		   FROM users
+		   WHERE user_id =' . $user_id;
+	
+		# Run the query
+	    $user = DB::instance(DB_NAME)->select_row($q);
+	
+	    # Pass data to the View
+	    $this->template->content->user = $user;
+	    
+	    # Use the DB title as the page title 
+		$this->template->title   = "test";
+	
+	    # Render the View
+	    echo $this->template;
+	}
+ 	
+ 	/*
+	public function p_add_bio() {
         # Associate this post with this user
         $_POST['user_id']  = $this->user->user_id;
         
@@ -196,6 +219,7 @@ class users_controller extends base_controller {
         # Redirect to same page (to refresh)
 	    Router::redirect("/users/profile");       
     }
+*/
 
 
 } # end of the class
