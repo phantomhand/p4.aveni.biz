@@ -42,7 +42,7 @@
                 			<?php endif; ?>
                 		</li>
                 		<?php if($user->access_level == 3): ?>
-                			<li><a class="admin" href="/admin">ADMIN</a></li>
+                			<li><a class="admin" href="/admin">Admin</a></li>
                 		<?php endif; ?></li>
 	                		<li><a href="/films">Films</a></li>
 	                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
@@ -82,8 +82,19 @@
 		<hr>
 		
 		<footer>
-			<p>Documentary Educational Resources &copy; 2013</p>
+			<p class="sm">Documentary Educational Resources &copy; 2013</p>
+			
+			<div id="social-icons">
+				<span class="sm">Follow us &nbsp;</span>
+				<a href="#"><img class="social" src="/images/icons/facebook.png"></a>
+				<a href="#"><img class="social" src="/images/icons/twitter.png"></a>
+				<a href="#"><img class="social" src="/images/icons/youtube.png"></a>
+				<a href="#"><img class="social" src="/images/icons/vimeo.png"></a>
+				<a href="#"><img class="social" src="/images/icons/flickr.png"></a>
+				<a href="#"><img class="social" src="/images/icons/rss.png"></a>
+			</div>
 		</footer>
+		
 		
 		</div> <!-- /container -->
 		

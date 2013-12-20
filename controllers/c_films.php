@@ -8,7 +8,7 @@ class films_controller extends base_controller {
     public function add() {
         # Setup view
         $this->template->content = View::instance('v_films_add');
-        $this->template->title   = "Add New Film";
+        $this->template->title   = "DER | Add New Film";
         
         # Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
@@ -39,7 +39,7 @@ class films_controller extends base_controller {
 	public function index() {	 
  	    # Set up the View
 	    $this->template->content = View::instance('v_films_index');
-	    $this->template->title   = "Films";
+	    $this->template->title   = "DER | Films";
 	
 	    # Build the query
 	    $q = 'SELECT

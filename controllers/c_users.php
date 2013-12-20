@@ -12,7 +12,7 @@ class users_controller extends base_controller {
     public function signup($error = NULL) {
         # Setup view
         $this->template->content = View::instance('v_users_signup');
-        $this->template->title   = "Sign Up";
+        $this->template->title   = "DER | Sign Up";
         
        	# Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
@@ -22,9 +22,8 @@ class users_controller extends base_controller {
 	    $this->template->content->error = $error; 
         		
 		# Render template
-        echo $this->template;
-        
-        }
+        echo $this->template;    
+	}
 	 
     public function p_signup() {      	   		    
  	    # More data we want stored with the user
@@ -63,6 +62,7 @@ class users_controller extends base_controller {
     public function login($error = NULL) {
 	    # Set up the view
 	    $this->template->content = View::instance("v_users_login");
+	    $this->template->title   = "DER | Log In";
 	    
 	    # Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
@@ -185,7 +185,7 @@ class users_controller extends base_controller {
  	}
  	
  	public function id($user_id) {				
-		// Link films to view by database id
+		# Link films to view by database id
 		$this->template->content = View::instance('v_users_id');
 		
 		# Build the query
@@ -200,7 +200,7 @@ class users_controller extends base_controller {
 	    $this->template->content->user = $user;
 	    
 	    # Use the DB title as the page title 
-		$this->template->title   = "test";
+		$this->template->title   = "DER | ". $user['first_name']." ".$user['last_name'];
 	
 	    # Render the View
 	    echo $this->template;

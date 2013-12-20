@@ -7,7 +7,7 @@ class about_controller extends base_controller {
 
     public function index() {
             $this->template->content = View::instance('v_about');
-            $this->template->title   = "About Documentary Educational Resources";
+            $this->template->title   = "DER | About";
 
         # Render template
             echo $this->template;

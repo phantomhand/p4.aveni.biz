@@ -47,7 +47,7 @@ class posts_controller extends base_controller {
 	public function index() {	
 	    # Set up the View
 	    $this->template->content = View::instance('v_posts_index');
-	    $this->template->title   = "Posts";
+	    $this->template->title   = "DER | Posts";
 	
 	    # Build the query
 	    $q = 'SELECT 

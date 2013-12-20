@@ -3,10 +3,10 @@
 		<div class="container">		
 								
 				<div> <!-- open individual film cell -->
-					<a href="/films/<?=$film['unique_id']?>"><img class="film-lg" src="/images/<?=$film['image']?>"></a>
-				
+					<img class="film-lg" src="/images/<?=$film['image']?>">
+									
 						<!-- Show the film info and content -->
-						<h2><?=$film['title']?><br>
+						<h2 class="title"><?=$film['title']?><br>
 							<?php if(!empty($film['alt_title'])):?> <?=$film['alt_title']?>
 							<?php endif; ?></h2>
 						<p>by <?=$film['director_1']?> 
