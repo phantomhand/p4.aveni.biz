@@ -1,6 +1,6 @@
 <aside id="featured" class="body">
 	<article>
-		<h2>Who's Blabbing?</h2>
+		<h2>Community</h2>
 			<br>
 		
 	
@@ -18,7 +18,7 @@
 				    <?php endif; ?>
 				    
 				    <!-- Print this user's name -->
-				    <b><?=$user['first_name']?> <?=$user['last_name']?></b>
+				    <b><a href="/users/id/<?=$user['user_id']?>"><?=$user['first_name']?> <?=$user['last_name']?></a></b>
 				
 				    <!-- If there exists a connection with this user, show a unfollow link -->
 				    <?php if(isset($connections[$user['user_id']])): ?>
