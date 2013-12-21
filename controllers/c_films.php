@@ -6,6 +6,12 @@ class films_controller extends base_controller {
     }
 
     public function add() {
+    	# Make sure user has admin access.
+        if($this->user->access_level != 3) {
+            # If not, redirect them to the films index
+	    	Router::redirect("/films");
+        }
+        
         # Setup view
         $this->template->content = View::instance('v_films_add');
         $this->template->title   = "DER | Add New Film";
@@ -48,17 +54,12 @@ class films_controller extends base_controller {
 			films.alt_title,
 			films.director_1,
 			films.director_2,
-			films.director_3,
-			films.director_4,
 			films.producer_1,
 			films.producer_2,
 			films.color,
 			films.running_time_1,
 			films.running_time_2,
 			films.year_released,
-			films.description,
-			films.inst_price,
-			films.home_price,
 			films.image
 				FROM films
 				ORDER BY films.title ASC';
@@ -91,6 +92,14 @@ class films_controller extends base_controller {
 		# Use the DB title as the page title 
 		$this->template->title   = "DER Film | ". $film['title'];
 		
+		# Pass in template-specific JS & CSS files
+	    $this->template->client_files_head =
+		    '<script type="text/javascript" src="/js/fancybox/jquery.fancybox.js"></script>
+			<script type="text/javascript" src="/js/fancybox/jquery.fancybox.pack.js"></script>
+			<script type="text/javascript" src="/js/fancybox/fancybox-controls.js"></script>
+		    <link rel="stylesheet" href="/css/jquery.fancybox.css" type="text/css" media="screen"/>
+		    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>';
+				
 	    # Render the View
 	    echo $this->template;
 	}
