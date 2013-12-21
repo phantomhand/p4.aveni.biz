@@ -73,8 +73,6 @@ class films_controller extends base_controller {
 	    echo $this->template;
 	}
 
-
-
 	public function id($unique_id) {				
 		# Link films to view by database id
 		$this->template->content = View::instance('v_films_id');
