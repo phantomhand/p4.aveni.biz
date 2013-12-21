@@ -1,10 +1,9 @@
 <div class="panel panel-default">
-	<div class="panel-body">
-		<div class="container">
+	<div class="container">
 		
 		<div class="col-lg-8"> 
 			<h3><?=$user['first_name']?> <?=$user['last_name']?><h3>
-		</div>
+		
 			
 		<!-- user pic -->
 		<?php if ( ($user['image'] == NULL) ): ?> 
@@ -16,8 +15,8 @@
 			<br>
 		<?php endif; ?>			
 	 	<!-- end user pic -->
+	 	</div>
 		
-		</div> <!-- /container -->
-	</div>
+	</div> <!-- /container -->
 </div>
 
