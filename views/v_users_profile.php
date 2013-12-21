@@ -1,6 +1,5 @@
 <div class="panel panel-default">
-	<div class="panel-body">
-		<div class="container">
+	<div class="container">
 		
 		<div class="col-lg-6">
 			<h2><?=$user->first_name?>'s Profile</h2>	
@@ -9,34 +8,40 @@
 			
 			<strong>Email:</strong> <?=$user->email?><br>
 			
-			<form method='POST' action='/posts/p_add'>
-				<label for='content'><b>Add a new post</b></label><br>
-				<textarea style="width: 400px; height: 80px;" name="content" id='content'></textarea>
-				<br>
-				<br>
-				<input type='submit' value='Add New Post' class="btn btn-primary" style="float: left; margin-top: -12px;">	
-			</form>	
-		</div>
-		
-		<br>
-		<div class="col-lg-6">
-			<label for="content">Your profile image</label><br>
+			<strong>User since:</strong> <?=date('F j, Y', $user->created)?><br>
+			
+			</p>
+			
+			<label for="content">Your image:</label><br>
 			<?php if ( ($user->image == NULL) ): ?> 
-				<img class="avatar-lg" src="/images/avatar-question.jpg" alt="User Pic" height="150" width="150"/>
+				<img class="avatar-pf id-profile" src="/images/avatar-blank.png" alt="User Pic" height="200" width="200"/>
 				<br>
 			
 			<?php elseif (isset ($user->image) ): ?>
-				<img class="avatar-lg" src="<?=$user->image?>" alt="User Pic" height="150" width="150"/>
+				<img class="avatar-pf" src="<?=$user->image?>" alt="User Pic" height="200" width="200"/>
 				<br>
 			<?php endif; ?>			
 				
 				<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
 					<input type='file' class="input-xlarge" name='image'>
+					<p class="x-sm">jpg, gif, or png only</p>
 					<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
-				</form>
+				</form>	
+				
+				<?php if (isset ($error) ): ?>
+					<br>
+					<span class='error'>
+						<p>Invalid file type. Please try again.</p>
+					</span>
+					<br>
+				<?php endif; ?>
+			<br>
 		</div>
 		
-		</div> <!-- /container -->
-	</div>
+		<div class="col-lg-6 favs">
+			
+		</div>
+		
+	</div> <!-- /container -->
 </div>
 

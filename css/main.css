@@ -1,7 +1,11 @@
 /* General ********/
 
 body {
-	background-color: #eee !important; /* #00A0DF */
+	background-color: #fff !important;
+}
+
+.panel-default {
+	background-color: #eee !important;
 }
 
 .content {
@@ -86,10 +90,11 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 
 .single {
 	position: relative;
-	width: 96.5%;
-	background-color: #eee;
+	width: 47.5%;
+	float: left;
+	background-color: #fff;
 	border: 1px solid #ddd;
-	padding: 0 0 10px 5px;
+	padding: 0 0 10px 10px;
 	margin: 0 20px 10px 0;
 }
 
@@ -158,11 +163,18 @@ a.navbar-brand {
 	border: 1px solid #ddd;
 	float: right;
 	margin-right: 5% !important;
-	margin-top: -7% !important;
+	margin-top: -3% !important;
+	margin-bottom: 5% !important;
 }
 
 .id-profile {
 	background: #00A0DF !important;
+	margin-bottom: 5px;
+}
+
+.avatar-pf {
+	border: 1px solid #ddd;
+	margin-bottom: 5px;
 }
 
 .avatar {
@@ -277,21 +289,23 @@ a.followbutton, .postbutton {
 
 /* Misc ********/
 
-.hr {
+
+hr {
+	border: 0; border-top: 1px solid #999 !important;
+}
+
+.hr { 
 	width: 96.5%; 
-	margin-left: -2px;
+	margin-left: 1px;
+	border: 0; border-top: 1px solid #999;
 }
 
-.sm {
-	font-size: small;
-}
-
+/* Social media links for footer */
 #social-icons {
 	float: right;
 	margin-top: -30px;
 	padding-right: 10px;
 }
-
 
 .social {
 	float: leftt;
@@ -305,9 +319,23 @@ a.followbutton, .postbutton {
 	opacity: 1;
 }
 
-h4.title {
+
+/* Text styles */ 
+
+/* Film titles in index */
+h3.title {
 	text-transform: uppercase !important;
-	font-size: medium;
+	font-size: .95em;
+	margin-top: 12px;
+}
+
+.sm {
+	font-size: small;
+}
+
+.x-sm {
+	font-size: x-small;
+	margin-top: 5px;
 }
 
 

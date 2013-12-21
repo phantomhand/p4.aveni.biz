@@ -150,7 +150,7 @@ class users_controller extends base_controller {
 	
 	    # Setup view
 	    $this->template->content = View::instance('v_users_profile');
-	    $this->template->title   = "Documentary Educational Resources | ".$this->user->first_name."".last_name;
+	    $this->template->title   = "DER | ".$this->user->first_name.' '.$this->user->last_name;
 	
 	    # Render template
 	    echo $this->template;
@@ -159,7 +159,7 @@ class users_controller extends base_controller {
 	public function add_image(){               
         # Upload image, set $filename variable to file name
         $filename = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "gif", "GIF"), 
-        'avatar-'.$this->user->user_id);
+        'user-'.$this->user->user_id);
    		     
         # Associate this image with this user
         $_FILES['user_id']  = $this->user->user_id;
@@ -167,21 +167,31 @@ class users_controller extends base_controller {
         # Update $filename to include file path to render full URL
         $filename = "/uploads/avatars/$filename";
         
-        # Pass filename to database 
-        $data = Array("image"=>$filename);
-              
-        $q = "WHERE user_id = ".$this->user->user_id;
-
-        # Instantiate
-        DB::instance(DB_NAME)->update('users', $data, $q);
+         if ($filename == "/uploads/avatars/Invalid file type.") {
+	    	
+        	# Redirect to error parameter
+	        Router::redirect("/users/profile/error");	
+        }
         
-        $this->template->content = View::instance("v_posts_index");
+        else {
         
-        # Pass the data to the View
-		$this->template->user->image;
-		      
-        # Refresh profile
-        Router::redirect('/users/profile');
+	        # Pass filename to database 
+	        $data = Array("image"=>$filename);
+	        
+	        # In this users record   
+	        $q = "WHERE user_id = ".$this->user->user_id;
+	
+	        # Instantiate
+	        DB::instance(DB_NAME)->update('users', $data, $q);
+	        
+	        $this->template->content = View::instance("v_posts_index");
+	        
+	        # Pass the data to the View
+			$this->template->user->image;
+        }
+			      
+	        # Refresh profile
+	        Router::redirect('/users/profile');       
  	}
  	
  	public function id($user_id) {				
@@ -205,21 +215,5 @@ class users_controller extends base_controller {
 	    # Render the View
 	    echo $this->template;
 	}
- 	
- 	/*
-	public function p_add_bio() {
-        # Associate this post with this user
-        $_POST['user_id']  = $this->user->user_id;
-        
-        $q = "WHERE user_id = ".$this->user->user_id;
-
-        # Update
-        DB::instance(DB_NAME)->update('users', $_POST, $q);
-        
-        # Redirect to same page (to refresh)
-	    Router::redirect("/users/profile");       
-    }
-*/
-
 
 } # end of the class
