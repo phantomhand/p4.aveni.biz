@@ -9,6 +9,7 @@ $(document).ready(function() {
 		closeClick	: false,
 		openEffect	: 'none',
 		closeEffect	: 'none',
-		overlayColor : '#ff6346'
+		overlayColor : '#ff6346',
+		overlayOpacity : 1.0
 	});
 });
