@@ -36,39 +36,35 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav nav-pills pull-right">
-					<!-- Menu for users who are logged in -->
-                        <?php if($user): ?>
-						<li>
-							<?php if($user): ?>
-                				<p class="welcome">Welcome<?php if($user) echo ', '.$user->first_name/* .'&nbsp;'.$user->last_name */; ?></p>
-                			<?php endif; ?>
-                		</li>
-                		<?php if($user->access_level == 3): ?>
-                			<li><a class="admin" href="/admin">Admin</a></li>
-                		<?php endif; ?></li>
-	                		<li><a href="/films">Films</a></li>
-	                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-	                			<ul class="dropdown-menu">
-	                				<li><a href="/posts/users">People</a></li>
-	                				<li><a <a href="/posts">Posts</a></li>
-	                			</ul>
-	                		</li>
-							<li><a href="/about">About</a></li>
-	                		<li><a href="/users/profile">My Profile</a></li>
-	                		<li><a href="/users/logout">Log Out</a></li>
-                		
-                		<!-- Menu options for users who are not logged in -->
-                        <?php else: ?>
-	                        <li><a href="/films">Films</a></li>
-	                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
-	                			<ul class="dropdown-menu">
-	                				<li><a href="/posts/users">People</a></li>
-	                				<li><a <a href="/posts">Posts</a></li>
-	                			</ul>
-	                		</li>
-							<li><a href="/about">About</a></li>
-							<li><a href="/users/signup">Sign Up</a></li>
-							<li><a href="/users/login">Log In</a></li>
+						<!-- Menu for users who are logged in -->
+	                    <?php if($user): ?>
+							
+	                		<?php if($user->access_level == 3): ?>
+	                			<li><a class="admin" href="/admin">Admin</a></li>
+	                		<?php endif; ?></li>
+		                		<li><a href="/films">Films</a></li>
+		                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+		                			<ul class="dropdown-menu">
+		                				<li><a href="/posts/users">People</a></li>
+		                				<li><a <a href="/posts">Posts</a></li>
+		                			</ul>
+		                		</li>
+								<li><a href="/about">About</a></li>
+		                		<li><a href="/users/profile">My Profile</a></li>
+		                		<li><a href="/users/logout">Log Out</a></li>
+	                		
+	                		<!-- Menu options for users who are not logged in -->
+	                        <?php else: ?>
+		                        <li><a href="/films">Films</a></li>
+		                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
+		                			<ul class="dropdown-menu">
+		                				<li><a href="/posts/users">People</a></li>
+		                				<li><a <a href="/posts">Posts</a></li>
+		                			</ul>
+		                		</li>
+								<li><a href="/about">About</a></li>
+								<li><a href="/users/signup">Sign Up</a></li>
+								<li><a href="/users/login">Log In</a></li>
 						<?php endif; ?> 
 					</ul>
 				</div><!--/.navbar-collapse -->
