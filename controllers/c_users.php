@@ -6,6 +6,10 @@ class users_controller extends base_controller {
     } 
 
     public function index() {
+    	# Setup view
+        $this->template->content = View::instance('v_template');
+        $this->template->title   = "DER | Index";
+        
         echo "This is the index page";
     }
 
@@ -156,7 +160,7 @@ class users_controller extends base_controller {
 	    echo $this->template;
 	}	
 	
-	public function add_image(){               
+	public function add_image($error = NULL){               
         # Upload image, set $filename variable to file name
         $filename = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "gif", "GIF"), 
         'user-'.$this->user->user_id);
