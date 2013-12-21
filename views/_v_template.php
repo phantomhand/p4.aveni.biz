@@ -12,6 +12,8 @@
 		<!-- Main CSS -->
 		<link href="/css/main.css" rel="stylesheet">
 		
+		<!-- JQuery -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 		
 		<!-- Just for debugging purposes. Don't actually copy this line! -->
 		<!--[if lt IE 9]><script src="../../docs-assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -86,12 +88,12 @@
 			
 			<div id="social-icons">
 				<span class="sm">Follow us &nbsp;</span>
-				<a href="#"><img class="social" src="/images/icons/facebook.png"></a>
-				<a href="#"><img class="social" src="/images/icons/twitter.png"></a>
-				<a href="#"><img class="social" src="/images/icons/youtube.png"></a>
-				<a href="#"><img class="social" src="/images/icons/vimeo.png"></a>
-				<a href="#"><img class="social" src="/images/icons/flickr.png"></a>
-				<a href="#"><img class="social" src="/images/icons/rss.png"></a>
+				<a href="http://www.facebook.com/pages/Documentary-Educational-Resources/153516688607"><img class="social" src="/images/icons/facebook.png"></a>
+				<a href="https://twitter.com/docued"><img class="social" src="/images/icons/twitter.png"></a>
+				<a href="http://www.youtube.com/docued"><img class="social" src="/images/icons/youtube.png"></a>
+				<a href="http://vimeo.com/docued"><img class="social" src="/images/icons/vimeo.png"></a>
+				<a href="http://www.flickr.com/photos/der/"><img class="social" src="/images/icons/flickr.png"></a>
+				<a href="http://feeds.feedburner.com/DER_RSS"><img class="social" src="/images/icons/rss.png"></a>
 			</div>
 		</footer>
 		
@@ -102,7 +104,6 @@
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>
