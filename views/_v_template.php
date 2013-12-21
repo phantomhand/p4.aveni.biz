@@ -38,7 +38,7 @@
                         <?php if($user): ?>
 						<li>
 							<?php if($user): ?>
-                				<p class="welcome">Welcome<?php if($user) echo ', '.$user->first_name.'&nbsp;'.$user->last_name; ?></p>
+                				<p class="welcome">Welcome<?php if($user) echo ', '.$user->first_name/* .'&nbsp;'.$user->last_name */; ?></p>
                 			<?php endif; ?>
                 		</li>
                 		<?php if($user->access_level == 3): ?>
