@@ -67,6 +67,7 @@ p.welcome {
 	color: #00A0DF !important;
 }
 
+
 ul.dropdown-menu {
 	border: none;
 	box-shadow: none;
@@ -88,6 +89,7 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 
 /********** FILMS **********/
 
+/* Film list page */
 .single {
 	position: relative;
 	width: 47.5%;
@@ -98,7 +100,10 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 	margin: 0 20px 10px 0;
 }
 
-/* Film titles in index */
+h2.title {
+	margin-top: 2px;
+}
+
 h3.title {
 	text-transform: uppercase !important;
 	font-size: 1em;
@@ -113,13 +118,46 @@ h3.title {
 	margin-top: 12px;
 }
 
+
+/* Individual film page */
+
+#film-wrap {
+	padding: 15px;
+}
+
 .film-lg {
-	height: 300px; 
-	width: 400px; 
+	height: 30%; 
+	width: 40%; 
 	float: left; 
 	margin-right: 25px;
 	margin-top: 5px;
 }
+
+.preview {
+	font-size: small;
+	font-weight: bold;
+	color: #fff !important;
+
+}
+
+#gallery {
+	float: left;
+}
+
+#info {
+	float: right;
+	margin-top: -40px !important;
+}
+
+#description {
+	margin-top: 25px;
+	max-width: 50%;
+	float: left;
+	margin-right: 65px;
+}
+
+
+/* Buttons */
 
 .btn-custom {
   background-color: hsl(201, 100%, 46%) !important;
@@ -155,16 +193,7 @@ a.navbar-brand {
 }
 
 
-/********** USERS & POSTS **********/
-
-.post-block {
-	border: #DDD solid 1px;
-	background-color: #fff;
-	padding: 8px 40px 5px 8px;
-	margin-bottom: 20px;
-	min-height: 65px;
-	width: 96.5%;
-}
+/********** USERS **********/
 
 .avatar-lg {
 	border: 1px solid #ddd;
@@ -211,6 +240,26 @@ a.navbar-brand {
 	background: #00A0DF;
 }
 
+.userlisting {
+	background-color: #fff;
+	border: #ddd solid 1px;
+	padding: 8px 10px 5px 8px;
+	margin-bottom: -30px;
+	height: 72px;
+	width: 96.5%;
+}
+
+/********** POSTS **********/
+
+.post-block {
+	border: #DDD solid 1px;
+	background-color: #fff;
+	padding: 8px 40px 5px 8px;
+	margin-bottom: 20px;
+	min-height: 65px;
+	width: 96.5%;
+}
+
 .postusername {
 	font-weight: bold;
 	padding-bottom: 5px;
@@ -221,22 +270,13 @@ a.navbar-brand {
 
 p.post-text {
 	padding-left: 100px;
-	max-width: 80%;
+	max-width: 100%;
 	position: relative;
 	text-overflow: inherit; 
 }
 
 time {
 	font-size: x-small;
-}
-
-.userlisting {
-	background-color: #eee;
-	border: #ddd solid 1px;
-	padding: 8px 10px 5px 8px;
-	margin-bottom: -30px;
-	height: 72px;
-	width: 96.5%;
 }
 
 /* Text Areas ********/
