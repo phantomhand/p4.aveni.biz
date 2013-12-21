@@ -1,13 +1,15 @@
-<section id="content" class="body">
- 
- 	<form method='POST' action='/posts/p_add'>
-
-	    <label for='content'>New Post:</label><br>
-	    <textarea style="width: 715px;" name='content' id='content'></textarea>
+<div class="panel panel-default">
+	<div class="container">
 	
-		<br>
-	    <input type='submit' value='New post'>
-
-	</form> 
-  
-</section><!-- /#content -->
+		<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
+			<label for='content'><h2>Join the Discussion</h2></label><br>
+			<img class="avatar-add" src="<?=$user->image?>" height="100" width="100"  alt="User pic"/>
+			<textarea name="content" class="addpost form-inline" id='content'></textarea>
+			
+			<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
+		</form>
+		
+		<hr class="hr">
+		
+	</div> <!-- /container -->
+</div>

@@ -1,4 +1,4 @@
-/* General ********/
+/********** GENERAL **********/
 
 body {
 	background-color: #fff !important;
@@ -82,11 +82,11 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 /* About ********/
 
 .about {
-	width: 70%;
+	width: 75%;
 }
 
 
-/* Films ********/
+/********** FILMS **********/
 
 .single {
 	position: relative;
@@ -96,6 +96,13 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 	border: 1px solid #ddd;
 	padding: 0 0 10px 10px;
 	margin: 0 20px 10px 0;
+}
+
+/* Film titles in index */
+h3.title {
+	text-transform: uppercase !important;
+	font-size: 1em;
+	margin-top: 12px;
 }
 
 .film-sm {
@@ -139,7 +146,7 @@ a.dropdown-menu {      ********** WORK ON TIHS ********
 
 .navbar-inverse {
   background-color: #fff !important;
-  border-color: #ddd !important;
+  border-color: #999 !important;
 }
 	
 a.navbar-brand {
@@ -148,11 +155,11 @@ a.navbar-brand {
 }
 
 
-/* Posts & User Listing *****/
+/********** USERS & POSTS **********/
 
 .post-block {
 	border: #DDD solid 1px;
-	background-color: #EFEFEF;
+	background-color: #fff;
 	padding: 8px 40px 5px 8px;
 	margin-bottom: 20px;
 	min-height: 65px;
@@ -183,6 +190,15 @@ a.navbar-brand {
 	width: 80px;
 	border: #ddd solid 1px;
 	margin-right: 10px;
+	background: #00A0DF;
+}
+
+.avatar-add {
+	float: left;
+	height: 100px;
+	width: 100px;
+	border: #ddd solid 1px;
+	margin-right: 12px;
 	background: #00A0DF;
 }
 
@@ -228,6 +244,10 @@ time {
 .addpost {
 	width: 40% !important;
 	height: 100px;
+}
+
+.desc-input {
+	height: 173.75px !important;
 }
 	
 	
@@ -320,14 +340,7 @@ hr {
 }
 
 
-/* Text styles */ 
-
-/* Film titles in index */
-h3.title {
-	text-transform: uppercase !important;
-	font-size: .95em;
-	margin-top: 12px;
-}
+/* Other text styles */ 
 
 .sm {
 	font-size: small;
@@ -338,6 +351,10 @@ h3.title {
 	margin-top: 5px;
 }
 
+.fancybox-skin {
+    background: transparent;
+    box-shadow: none !important;
+}
 
 
 

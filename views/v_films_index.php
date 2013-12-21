@@ -1,6 +1,8 @@
 <div class="panel panel-default">
-	<div class="container ">		
+	<div class="container">	
+		
 		<h2>DER Documentaries</h2>
+		
 		<hr class="hr">
 		
 		<?php foreach($films as $film):?>					
