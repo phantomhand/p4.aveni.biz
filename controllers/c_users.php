@@ -107,7 +107,7 @@ class users_controller extends base_controller {
 	    # Login passed
 	    else {
 	        setcookie("token", $token, strtotime('+2 weeks'), '/');
-	        Router::redirect("/");
+	        Router::redirect("/users/profile");
 	    } //end else
 
 	}
@@ -174,7 +174,7 @@ class users_controller extends base_controller {
          if ($filename == "/uploads/avatars/Invalid file type.") {
 	    	
         	# Redirect to error parameter
-	        Router::redirect("/users/profile/error");	
+	        Router::redirect("/users/profile");	
         }
         
         else {
