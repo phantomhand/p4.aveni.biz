@@ -3,7 +3,12 @@
 	
 		<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
 			<label for='content'><h2>Join the Discussion</h2></label><br>
-			<img class="avatar-add" src="<?=$user->image?>" height="100" width="100"  alt="User pic"/>
+			<?php if ( ($user->image == NULL) ): ?> 
+				<img class="avatar-add" src="/images/avatar-blank.png" height="100" width="100"  alt="User pic"/>
+			<?php elseif (isset ($user->image) ): ?>
+				<img class="avatar-add" src="<?=$user->image?>" height="100" width="100" alt="User Pic"/>
+				<br>
+			<?php endif; ?>
 			<textarea name="content" class="addpost form-inline" id='content'></textarea>
 			
 			<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
@@ -30,7 +35,7 @@
 				<h3 class="postusername"><?=$post['first_name']?> <?=$post['last_name']?></h3>
 					<p class="post-text"><?=$post['content']?></p>
 					<br>
-					<br>
+					
 						<time datetime="<?=Time::display($post['created'],'Y-m-d H:i')?>">
 						<?=Time::display($post['created'])?>
 						</time>

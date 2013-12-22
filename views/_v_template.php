@@ -40,7 +40,7 @@
 	                    <?php if($user): ?>
 							
 	                		<?php if($user->access_level == 3): ?>
-	                			<li><a class="admin" href="/admin">Admin</a></li>
+	                			<li><a class="admin" href="/admin">ADMIN</a></li>
 	                		<?php endif; ?></li>
 		                		<li><a href="/films">Films</a></li>
 		                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>

@@ -122,7 +122,12 @@ h3.title {
 /* Individual film page */
 
 #film-wrap {
-	padding: 15px;
+	padding: 15px !important;
+	min-height: 360px;
+}
+
+#info {
+	padding-bottom: 100px !important;
 }
 
 .film-lg {

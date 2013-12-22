@@ -4,9 +4,9 @@
 		<div id="film-wrap">					
 			<div id="gallery col-lg-4">
 				<div id="film-image">
-					<?php if(!empty($film['image'])):?> 
+					<?php if(isset($film['image'])):?> 
 						<img class="film-lg" src="/images/<?=$film['image']?>" alt="film image" height="300" width="400"/>
-					<?php elseif (isset ($user->image) ): ?>
+					<?php elseif(!isset($film['image'])):?>
 						<img class="film-lg" src="/images/default-img.png" alt="film image" height="300" width="400"/>
 						<br>
 					<?php endif; ?>	
@@ -17,9 +17,7 @@
 				<!-- Show the film info and content -->
 				<h2 class="title"><?=$film['title']?><br>
 					<?php if(!empty($film['alt_title'])):?> <?=$film['alt_title']?>
-					<?php endif; ?></h2>
-					
-					
+					<?php endif; ?></h2>		
 				
 				<!-- Info -->
 				<p><!-- If part of series, list it -->
@@ -52,5 +50,6 @@
 					
 			</div> <!-- end info -->
 		</div> <!-- end film wrap -->
+		<br>
 	</div>
 </div>

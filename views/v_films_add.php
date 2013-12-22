@@ -30,7 +30,7 @@
 				<!-- <input type="text" placeholder="Subject 2" name='subject_2' class="form-control"> -->
 				<input type="text" placeholder="Institutional price" name='inst_price' class="form-control" required>
 				<input type="text" placeholder="Home use price" name='home_price' class="form-control">	
-				<input type="text" placeholder="Description" name='description' class="form-control desc-input" required>
+				<input type="text" placeholder="Description (max 150 words)" name='description' class="form-control desc-input" required>
 				</div>
 				
 				<div class="col-lg-3 form-signin">

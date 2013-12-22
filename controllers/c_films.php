@@ -30,7 +30,7 @@ class films_controller extends base_controller {
         DB::instance(DB_NAME)->insert('films', $_POST);
         
         # Redirect to same page (to refresh)
-	    Router::redirect("/films".$_POST["unique_id"]);      
+	    Router::redirect("/films");      
     }
     
     public function p_delete() {
