@@ -1,20 +1,25 @@
 <div class="panel panel-default">
-	<div class="container">		
+	<div class="container">	
+	
+		<h2>DER Films</h2>	
+			
+		<hr class="hr">	
 		
-		<div id="film-wrap">					
+		<div id="film-wrap">
+							
 			<div id="gallery col-lg-4">
-				<div id="film-image">
-					<?php if(isset($film['image'])):?> 
-						<img class="film-lg" src="/images/<?=$film['image']?>" alt="film image" height="300" width="400"/>
-					<?php elseif(!isset($film['image'])):?>
-						<img class="film-lg" src="/images/default-img.png" alt="film image" height="300" width="400"/>
-						<br>
-					<?php endif; ?>	
-				</div>
-			</div>
+				
+				<?php if(isset($film['image'])):?> 
+					<img class="film-lg" src="/images/<?=$film['image']?>" alt="<?=$film['title']?> image" height="300" width="400"/>
+				<?php elseif(!isset($film['image'])):?>
+					<img class="film-lg" src="/images/default-img.png" alt="film image" height="300" width="400"/>
+					<br>
+				<?php endif; ?>	
+					
+			</div> <!-- end gallery -->
 						
-			<div id="info col-lg-6">			
-				<!-- Show the film info and content -->
+			<div id="info col-lg-4">			
+				<!-- Show the film image and info -->
 				<h2 class="title"><?=$film['title']?><br>
 					<?php if(!empty($film['alt_title'])):?> <?=$film['alt_title']?>
 					<?php endif; ?></h2>		
@@ -45,11 +50,13 @@
 				</button>
 			
 				<div id="description">
-						<?=$film['description']?><br>
+						<p><?=$film['description']?></p>
+						<br>
 				</div> <!-- end description -->
-					
+				
 			</div> <!-- end info -->
-		</div> <!-- end film wrap -->
+			
+		</div> <!-- end content box -->
 		<br>
 	</div>
 </div>

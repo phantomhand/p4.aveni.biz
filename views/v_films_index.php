@@ -1,7 +1,7 @@
 <div class="panel panel-default">
 	<div class="container">	
 		
-		<h2>DER Documentaries</h2>
+		<h2>DER Films</h2>
 		
 		<hr class="hr">
 		
