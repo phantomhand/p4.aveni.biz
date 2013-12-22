@@ -1,21 +1,21 @@
 <div class="panel panel-default">
-	<div class="panel-body">
-		<div class="container">	
-	
-			<h2>About</h2>
-			<hr style="width: 94%; margin-left: -2px;">
-			
-			<strong>About DER:</strong><br />
-				<div class="index-by-area-menu">
-				<a href="#mission">Mission</a> |
-				<a href="#guiding">Guiding Principles</a> |
-				<a href="#activities">Key Activities</a>
+	<div class="container">	
+
+		<h2>About DER</h2>
+		
+		<hr class="hr">
+		
+		<div id="content-box-about">
+			<div id="about">
+				<div>
+					<a href="#mission">Mission</a> |
+					<a href="#guiding">Guiding Principles</a> |
+					<a href="#activities">Key Activities</a>
 				</div>
 				
 				
 				<hr style="width: 94%; margin-left: -2px;">
 
-				<div class="about">
 				<a name="mission"/></a>
 				<h2>Mission</h2>
 				
@@ -62,6 +62,9 @@
 				<p>&bull; We work with filmmakers to make available the highest quality versions of their films, by identifying and mastering new versions of significant historical titles including those not previously released on contemporary video formats and releasing works that have fallen out of distribution.</p>
 				
 				<p>&bull; We frequently work with filmmakers to produce discussion and study guides, as well as other materials to extend learning related to their films.</p> 
-				</div> <!-- end about div -->
 				
-			</div>
+			</div> <!-- end about -->
+		</div> <!-- end content box -->	
+		<br>
+	</div> <!-- end container -->	
+</div>
