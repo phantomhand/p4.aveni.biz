@@ -41,7 +41,7 @@
 				<?=$film['running_time_1']?> minutes, <?=$film['color']?>, <?=$film['year_released']?></p>
 				
 				<button type="button" class="btn btn-primary btn-xs preview">
-				  <a class="various fancybox.iframe preview" href="<?=$film['video_link']?>"><span class="glyphicon glyphicon-play"></span> PREVIEW</a>
+				  <a class="various fancybox.iframe preview-btn" href="<?=$film['video_link']?>"><span class="glyphicon glyphicon-play"></span> PREVIEW</a>
 				</button>
 			
 				<div id="description">
