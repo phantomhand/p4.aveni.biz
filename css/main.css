@@ -28,6 +28,22 @@ a:active, a:hover {
 	text-align: center;
 }
 
+.whitebox {
+	float: left;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	padding: 0 0 10px 10px;
+	margin: 0 20px 10px 0;
+}
+
+#content-box {
+	padding: 15px !important;
+	background-color: #fff;
+	width: 96.5%;
+	min-height: 500px;
+	border: 1px solid #ddd;
+}
+
 /* Header & Nav ********/
 
 .logo {
@@ -73,17 +89,21 @@ ul.dropdown-menu {
 	box-shadow: none;
 	font-size: small;
 	margin-top: -5px;
-}
-
-a.dropdown-menu {      ********** WORK ON TIHS ********
-	color: #eee !important;
-	background-color: red !important;
+	color: #ddd;
 }
 
 /* About ********/
 
-.about {
-	width: 75%;
+#about {
+	width: 90%;
+}
+
+#content-box-about {
+	padding: 15px !important;
+	background-color: #fff;
+	width: 96.5%;
+	min-height: 1000px;
+	border: 1px solid #ddd;
 }
 
 
@@ -123,7 +143,10 @@ h3.title {
 
 #film-wrap {
 	padding: 15px !important;
-	min-height: 360px;
+	background-color: #fff;
+	width: 96.5%;
+	min-height: 600px;
+	border: 1px solid #ddd;
 }
 
 #info {
@@ -213,6 +236,13 @@ a.navbar-brand {
 	margin-bottom: 5px;
 }
 
+.id-profile-other {
+	float: left;
+	h
+	background: #00A0DF !important;
+	margin-bottom: 5px;
+}
+
 .avatar-pf {
 	border: 1px solid #ddd;
 	margin-bottom: 5px;
@@ -254,6 +284,11 @@ a.navbar-brand {
 	width: 96.5%;
 }
 
+h4.title {
+	margin-top: 0px;
+	font-size: 1.13em;
+}
+
 /********** POSTS **********/
 
 .post-block {
@@ -265,16 +300,20 @@ a.navbar-brand {
 	width: 96.5%;
 }
 
+#addpost-block {
+	margin-top: -20px !important;
+}
+
 .postusername {
 	font-weight: bold;
 	padding-bottom: 5px;
 	margin-top: -1px;
-	padding-left: 100px;
+	padding-left: 97px;
 	
 }
 
 p.post-text {
-	padding-left: 100px;
+	padding-left: 97px;
 	max-width: 100%;
 	position: relative;
 	text-overflow: inherit; 
@@ -289,6 +328,13 @@ time {
 .addpost {
 	width: 40% !important;
 	height: 100px;
+	margin-top: 0px;
+}
+
+.addpost-profile {
+	width: 70% !important;
+	height: 100px;
+	margin-top: 0px;
 }
 
 .desc-input {
@@ -402,7 +448,13 @@ hr {
 }
 
 .jumbotron {
+	background-image: url(/images/kung-walk-jumbo-bg.jpg) no-repeat;
 	border: 1px solid #ddd !important;
+	margin-top: -40px;
+}
+
+.home-row {
+	margin-top: -20px;
 }
 
 
