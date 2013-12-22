@@ -1,47 +1,64 @@
 <div class="panel panel-default">
 	<div class="container">
 		
-		<div class="col-lg-6">
-			<h2><?=$user->first_name?>'s Profile</h2>	
-			<p>
-			<strong>Name:</strong> <?=$user->first_name?> <?=$user->last_name?><br>
-			
-			<strong>Email:</strong> <?=$user->email?><br>
-			
-			<strong>User since:</strong> <?=date('F j, Y', $user->created)?><br>
-			
-			</p>
-			
-			<label for="content">Your image:</label><br>
-			<?php if ( ($user->image == NULL) ): ?> 
-				<img class="avatar-pf id-profile" src="/images/avatar-blank.png" alt="User Pic" height="200" width="200"/>
-				<br>
-			
-			<?php elseif (isset ($user->image) ): ?>
-				<img class="avatar-pf" src="<?=$user->image?>" alt="User Pic" height="200" width="200"/>
-				<br>
-			<?php endif; ?>			
-				
-				<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
-					<input type='file' class="input-xlarge" name='image'>
-					<p class="x-sm">jpg, gif, or png only</p>
-					<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
-				</form>	
-				
-				<?php if (isset ($error) ): ?>
-					<br>
-					<span class='error'>
-						<p>Invalid file type. Please try again.</p>
-					</span>
-					<br>
-				<?php endif; ?>
-			<br>
-		</div>
+		<h2>DER Community | My Profile</h2>	
 		
-		<div class="col-lg-6 favs">
-			
-		</div>
+		<hr class="hr">
 		
+		<div id="content-box"> <!-- content box -->
+			<div class="col-lg-4"> <!-- user pic, name, and created date -->
+					
+				<h3><?=$user->first_name?> <?=$user->last_name?></h3>
+				<p>
+				<strong>Email:</strong> <?=$user->email?><br>
+				
+				<strong>User since:</strong> <?=date('F j, Y', $user->created)?><br>
+				
+				</p>
+				
+				<label for="content">Your image:</label><br>
+				<!-- if user has not added an image, use the default -->
+				<?php if ( ($user->image == NULL) ): ?> 
+					<img class="avatar-pf id-profile" src="/images/avatar-blank.png" alt="User Pic" height="200" width="200"/>
+					<br>
+				<!-- if user has added an image, use it -->
+				<?php elseif (isset ($user->image) ): ?>
+					<img class="avatar-pf" src="<?=$user->image?>" alt="User Pic" height="200" width="200"/>
+					<br>
+				<?php endif; ?>			
+					
+					<!-- image upload form -->
+					<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
+						<input type='file' class="input-xlarge" name='image'>
+						<p class="x-sm">jpg, gif, or png only</p>
+						<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
+					</form>	
+					
+					<!-- if there's an error, show this message --> <!-- WORK IN PROGRESS -->
+					<?php if (isset ($error) ): ?>
+						<br>
+						<span class='error'>
+							<p>Invalid file type. Please try again.</p>
+						</span>
+						<br>
+					<?php endif; ?>
+				<br>
+	
+			</div> <!-- end left side content -->
+			
+			<div class="col-lg-6"> <!-- middle content: add a post -->
+						
+				<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
+					<label for='content'><h3>Add a New Post</h3></label><br>
+					<textarea name="content" class="addpost-profile form-inline" id='content'></textarea>
+					
+					<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
+				</form>
+								
+			</div> <!-- end middle -->
+			
+		</div> <!-- end content box -->
+		<br>
 	</div> <!-- /container -->
 </div>
 

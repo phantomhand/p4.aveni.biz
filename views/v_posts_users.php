@@ -1,7 +1,9 @@
 <div class="panel panel-default">
 	<div class="container ">
 	
-		<h2>Community</h2>
+		<h2>DER Community</h2>
+		
+		<hr class="hr">	
 	
 		<?php foreach($users as $user): ?>
 		

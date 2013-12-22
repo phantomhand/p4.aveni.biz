@@ -1,23 +1,27 @@
 <div class="panel panel-default">
 	<div class="container">
 	
-		<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
-			<label for='content'><h2>Join the Discussion</h2></label><br>
-			<?php if ( ($user->image == NULL) ): ?> 
-				<img class="avatar-add" src="/images/avatar-blank.png" height="100" width="100"  alt="User pic"/>
-			<?php elseif (isset ($user->image) ): ?>
-				<img class="avatar-add" src="<?=$user->image?>" height="100" width="100" alt="User Pic"/>
-				<br>
-			<?php endif; ?>
-			<textarea name="content" class="addpost form-inline" id='content'></textarea>
+		<h2>DER Community</h2>	
 			
-			<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
-		</form>
+		<hr class="hr">	
+
+			<div id="addpost-block">	
+				<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
+					<label for='content'><h3>Join the Discussion</h3></label><br>
+					<?php if ( ($user->image == NULL) ): ?> 
+						<img class="avatar-add" src="/images/avatar-blank.png" height="100" width="100"  alt="User pic"/>
+					<?php elseif (isset ($user->image) ): ?>
+						<img class="avatar-add" src="<?=$user->image?>" height="100" width="100" alt="User Pic"/>
+					<?php endif; ?>
+					<textarea name="content" class="addpost form-inline" id='content'></textarea>
+					
+					<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
+				</form>
+			</div>
 		
 		<hr class="hr">
-		
-		
-		<h2>Current Posts</h2>
+				
+		<h3>Current Posts</h3>
 		
 		<?php foreach($posts as $post):?>					
 		
@@ -32,7 +36,7 @@
 				<?php endif; ?>
 				
 				<!-- Show the post info and content -->
-				<h3 class="postusername"><?=$post['first_name']?> <?=$post['last_name']?></h3>
+				<h4 class="postusername"><a href="/users/id/<?=$post['user_id']?>"><?=$post['first_name']?> <?=$post['last_name']?></a></h4>
 					<p class="post-text"><?=$post['content']?></p>
 					<br>
 					
