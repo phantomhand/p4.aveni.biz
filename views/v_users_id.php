@@ -25,6 +25,8 @@
 					</p>
 					
 				</div> <!-- end user info -->
+				
+				
 					
 			</div> <!-- end content box -->
 			<br>

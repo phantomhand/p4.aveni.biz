@@ -14,16 +14,16 @@
 				</div>
 				
 				
-				<hr style="width: 94%; margin-left: -2px;">
+				<hr class="hr">
 
-				<a name="mission"/></a>
+				<a id="mission"></a>
 				<h2>Mission</h2>
 				
 				<p>DER's mission is to promote thought-provoking documentary film and media for learning about the people and cultures of the world.</p>
 				
-				<hr style="width: 94%; margin-left: -2px;">
+				<hr class="hr">
 						
-				<a name="guiding"/></a>
+				<a id="guiding"></a>
 				<h2>Guiding Principles</h2>
 				
 				<h5>Cross-cultural Understanding</h5> 
@@ -38,12 +38,13 @@
 				<h5>Integrity</h5>
 				<p>We believe in the importance of connecting filmmakers and audiences, and in maintaining high professional standards in the quality of our products and in our interactions with filmmakers, educators, and our professional community.</p>
 				
-				<hr style="width: 94%; margin-left: -2px;">
+				<hr class="hr">
 				
-				<a name="activities"/></a>
+				<!-- Activities -->
+				<a id="activities"></a>
 				<h2>Key Activities</h2>  
 				
-				<h5>Access and Distribution:</h5>
+				<h5>Access and Distribution</h5>
 				
 				<p>&bull; We represent films with enduring value as documents of human societies and cultures, that portray unique subjectivities, record diverse cultural practices and beliefs, and offer insights into the processes underlying social and cultural continuity and change. We look for films that reflect deep cultural knowledge, whether through research or the close collaboration of filmmaker and subjects.</p>
 				
@@ -53,7 +54,7 @@
 				
 				<p>&bull; We seek out opportunities to extend the learning connected with the films in our collection.  This can include development and dissemination of educator and discussion guides, partnerships with school and community organizations, and creation of supporting materials available on a content-rich website.</p>
 				
-				<h5>Filmmaker Support:</h5>
+				<h5>Filmmaker Support</h5>
 				
 				<p>&bull; Through fiscal sponsorship, workshops and consulting, we support filmmakers who use media in the documentation of social and cultural practices, processes and beliefs.</p>
 				
@@ -63,8 +64,8 @@
 				
 				<p>&bull; We frequently work with filmmakers to produce discussion and study guides, as well as other materials to extend learning related to their films.</p> 
 				
-			</div> <!-- end about -->
-		</div> <!-- end content box -->	
+			</div> <!-- End About -->
+		</div> <!-- End content box -->	
 		<br>
-	</div> <!-- end container -->	
+	</div> <!-- End container -->	
 </div>

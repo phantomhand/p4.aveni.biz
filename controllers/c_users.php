@@ -1,11 +1,11 @@
 <?php
 class users_controller extends base_controller {
 
-    public function __construct() {
+	public function __construct() {
         parent::__construct();
     } 
 
-    public function index() {
+	public function index() {
     	# Setup view
         $this->template->content = View::instance('v_template');
         $this->template->title   = "DER | Index";
@@ -13,7 +13,7 @@ class users_controller extends base_controller {
         echo "This is the index page";
     }
 
-    public function signup($error = NULL) {
+	public function signup($error = NULL) {
         # Setup view
         $this->template->content = View::instance('v_users_signup');
         $this->template->title   = "DER | Sign Up";
@@ -29,7 +29,7 @@ class users_controller extends base_controller {
         echo $this->template;    
 	}
 	 
-    public function p_signup() {      	   		    
+	public function p_signup() {      	   		    
  	    # More data we want stored with the user
 	    $_POST['created']  = Time::now();
 	    $_POST['modified'] = Time::now();
@@ -63,7 +63,7 @@ class users_controller extends base_controller {
 	    Router::redirect("/users/login"); 	        
     }
 
-    public function login($error = NULL) {
+	public function login($error = NULL) {
 	    # Set up the view
 	    $this->template->content = View::instance("v_users_login");
 	    $this->template->title   = "DER | Log In";
@@ -82,7 +82,7 @@ class users_controller extends base_controller {
 	    echo $this->template;
 	 }       
 	 
-	 public function p_login() {        
+	public function p_login() {        
 	    # Sanitize the user entered data to prevent any funny-business (re: SQL Injection Attacks)
 	    $_POST = DB::instance(DB_NAME)->sanitize($_POST);
 	
@@ -107,7 +107,7 @@ class users_controller extends base_controller {
 	    # Login passed
 	    else {
 	        setcookie("token", $token, strtotime('+2 weeks'), '/');
-	        Router::redirect("/users/profile");
+	        Router::redirect("/films");
 	    } //end else
 
 	}
@@ -130,53 +130,55 @@ class users_controller extends base_controller {
 	    Router::redirect("/");
     }
 
-    public function profile($user_name = NULL) {     	  
-    	# Set up the View
-    	$this->template->content = View::instance('v_users_profile');
-    	$this->template->title = "Profile";
-    	
-    	$client_files_head = Array(
-    	'/css/bootstrap.css', 
-    	'/css/main.css');
-    	
-    	$this->template->client_files_head = Utils::load_client_files($client_files_head);
-		
-		# Pass the data to the View
-		$this->template->content->user_name = $user_name;
-		
-		
-		# If user is blank, they're not logged in; redirect them to the login page
-	    if(!$this->user) {
-	        Router::redirect('/users/login');
-	    }
-	
-	    # If they weren't redirected away, continue:
-	
-	    # Setup view
-	    $this->template->content = View::instance('v_users_profile');
-	    $this->template->title   = "DER | ".$this->user->first_name.' '.$this->user->last_name;
-	
-	    # Render template
-	    echo $this->template;
-	}	
-	
+	public function profile($user_name = NULL) {               
+            # Set up the View
+            $this->template->content = View::instance('v_users_profile');
+            $this->template->title = "Profile";
+            
+            
+            $client_files_head = Array(
+            '/css/bootstrap.css', 
+            '/css/main.css',
+            '/js/app.js');
+            
+            $this->template->client_files_head = Utils::load_client_files($client_files_head);
+                
+            # Pass the data to the View
+            $this->template->content->user_name = $user_name;
+            
+            
+            # If user is blank, they're not logged in; redirect them to the login page
+            if(!$this->user) {
+                Router::redirect('/users/login');
+            }
+        
+            # If they weren't redirected away, continue:
+        
+            # Setup view
+            $this->template->content = View::instance('v_users_profile');
+            $this->template->title   = "DER | ".$this->user->first_name.' '.$this->user->last_name;
+        
+            # Render template
+            echo $this->template;
+        }        
+        
 	public function add_image($error = NULL){               
-        # Upload image, set $filename variable to file name
-        $filename = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "gif", "GIF"), 
-        'user-'.$this->user->user_id);
-   		     
-        # Associate this image with this user
-        $_FILES['user_id']  = $this->user->user_id;
-        
-        # Update $filename to include file path to render full URL
-        $filename = "/uploads/avatars/$filename";
-        
-         if ($filename == "/uploads/avatars/Invalid file type.") {
-	    	
-        	# Redirect to error parameter
-	        Router::redirect("/users/profile/");
+	        # Upload image, set $filename variable to file name
+	        $filename = Upload::upload($_FILES, "/uploads/avatars/", array("jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "gif", "GIF"), 
+	        'user-'.$this->user->user_id);
+	                        
+	        # Associate this image with this user
+	        $_FILES['user_id']  = $this->user->user_id;
 	        
-	        echo "<?php $error = true ?>";	
+	        # Update $filename to include file path to render full URL
+	        $filename = "/uploads/avatars/$filename";
+	        
+	         if ($filename == "/uploads/avatars/Invalid file type.") {
+	                    
+	                # Redirect to error parameter
+	                Router::redirect("/users/profile/");
+	                
+	                echo "<?php $error = true ?>";        
         }
         
         else {
@@ -193,33 +195,33 @@ class users_controller extends base_controller {
 	        $this->template->content = View::instance("v_posts_index");
 	        
 	        # Pass the data to the View
-			$this->template->user->image;
-        }
-			      
+	                $this->template->user->image;
+			}
+	                      
 	        # Refresh profile
 	        Router::redirect('/users/profile');       
- 	}
- 	
- 	public function id($user_id) {				
-		# Link films to view by database id
-		$this->template->content = View::instance('v_users_id');
-		
-		# Build the query
-		$q = 'SELECT *
-		   FROM users
-		   WHERE user_id =' . $user_id;
-	
-		# Run the query
-	    $user = DB::instance(DB_NAME)->select_row($q);
-	
-	    # Pass data to the View
-	    $this->template->content->user = $user;
-	    
-	    # Use the DB title as the page title 
-		$this->template->title   = "DER | ". $user['first_name']." ".$user['last_name'];
-	
-	    # Render the View
-	    echo $this->template;
-	}
+	 	}
+         
+        public function id($user_id) {                                
+            # Link films to view by database id
+            $this->template->content = View::instance('v_users_id');
+            
+            # Build the query
+            $q = 'SELECT *
+               FROM users
+               WHERE user_id =' . $user_id;
+    
+            # Run the query
+            $user = DB::instance(DB_NAME)->select_row($q);
+        
+            # Pass data to the View
+            $this->template->content->user = $user;
+            
+            # Use the DB title as the page title 
+                $this->template->title   = "DER | ". $user['first_name']." ".$user['last_name'];
+        
+            # Render the View
+            echo $this->template;
+        }
 
 } # end of the class

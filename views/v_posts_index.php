@@ -3,11 +3,12 @@
 	
 		<h2>DER Community</h2>	
 			
-		<hr class="hr">	
-
+		<hr class="hr">
+			
+			<br>
 			<div id="addpost-block">	
 				<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
-					<label for='content'><h3>Join the Discussion</h3></label><br>
+					<h3>Join the Discussion</h3><br>
 					<?php if ( ($user->image == NULL) ): ?> 
 						<img class="avatar-add" src="/images/avatar-blank.png" height="100" width="100"  alt="User pic"/>
 					<?php elseif (isset ($user->image) ): ?>

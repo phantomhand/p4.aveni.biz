@@ -8,7 +8,7 @@
 		<div id="film-wrap">
 			
 			<!-- Image section -->				
-			<div id="gallery col-lg-4">
+			<div id="col-lg-4">
 				
 				<!-- If there's no film image listed in the database, use the default image -->
 				<?php if(($film['image'] == "")):?> 
@@ -21,46 +21,46 @@
 			</div> <!-- End gallery -->
 						
 			<!-- Film info section -->
-			<div id="info col-lg-4">
+			<div id="col-lg-6">
+				
+					<!-- Title -->
+					<h2 class="title"><?=$film['title']?><br>
+						<?php if(!empty($film['alt_title'])):?> <?=$film['alt_title']?>
+						<?php endif; ?></h2>		
+					
+					<p><!-- If part of series, list it -->
+						<?php if(!empty($film['series'])):?>
+							from the <?=$film['series']?> series<br>
+						<?php endif; ?>
 						
-				<!-- Title -->
-				<h2 class="title"><?=$film['title']?><br>
-					<?php if(!empty($film['alt_title'])):?> <?=$film['alt_title']?>
-					<?php endif; ?></h2>		
-				
-				<p><!-- If part of series, list it -->
-					<?php if(!empty($film['series'])):?>
-						from the <?=$film['series']?> series<br>
-					<?php endif; ?>
+						<!-- If part of collection, list it -->
+						<?php if(!empty($film['collection'])):?>
+							part of the <?=$film['collection']?> collection<br>
+						<?php endif; ?>
+						
+						<!-- Primary filmmaker credit -->
+							by <?=$film['director_1']?>
+							 
+						<!-- If there's a second director credit, list it -->	
+						<?php if(!empty($film['director_2'])):?>
+							&amp; <?=$film['director_2']?>
+						<?php endif; ?><br>
 					
-					<!-- If part of collection, list it -->
-					<?php if(!empty($film['collection'])):?>
-						part of the <?=$film['collection']?> collection<br>
-					<?php endif; ?>
+					<!-- Running time -->
+					<?=$film['running_time_1']?> minutes, <?=$film['color']?>, <?=$film['year_released']?></p>
 					
-					<!-- Primary filmmaker credit -->
-						by <?=$film['director_1']?>
-						 
-					<!-- If there's a second director credit, list it -->	
-					<?php if(!empty($film['director_2'])):?>
-						&amp; <?=$film['director_2']?>
-					<?php endif; ?><br>
-				
-				<!-- Running time -->
-				<?=$film['running_time_1']?> minutes, <?=$film['color']?>, <?=$film['year_released']?></p>
-				
-				<!-- Preview button -->
-				<br>
-				<button type="button" class="btn btn-primary btn-xs preview">
-				  <a class="various fancybox.iframe preview-btn" href="<?=$film['video_link']?>"><span class="glyphicon glyphicon-play"></span> PREVIEW</a>
-				</button>
-				
-				<!-- Film description-->
-				<div id="description">
-					<p><?=$film['description']?></p>
+					<!-- Preview button -->
 					<br>
-				</div> <!-- End description -->
-				
+					<a class="various fancybox.iframe preview-btn btn btn-primary btn-xs" href="<?=$film['video_link']?>">
+						<span class="glyphicon glyphicon-play"></span> Watch a Preview
+					</a>
+					
+					<!-- Film description-->
+					<div id="description">
+						<p><?=$film['description']?></p>
+						<br>
+					</div> <!-- End description -->
+					
 			</div> <!-- End info -->
 			
 		</div> <!-- End content box -->

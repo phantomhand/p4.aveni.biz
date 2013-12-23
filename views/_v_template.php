@@ -3,7 +3,6 @@
 	<head>
 		<title><?php if(isset($title)) echo $title; ?></title>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
@@ -11,6 +10,7 @@
 		<link rel="icon" href="favicon.ico" type="image/x-icon">
 		
 		<!-- Main CSS -->
+		<link href="/css/reset.css" rel="stylesheet">
 		<link href="/css/main.css" rel="stylesheet">
 		
 		<!-- JQuery -->
@@ -32,7 +32,7 @@
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<a class="navbar-brand logo" href="/index"><a href="/index"><img src="/images/logo.png"></a>
+					<a class="navbar-brand logo" href="/index"><img src="/images/logo.png" alt="DER Logo"></a>
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav nav-pills pull-right">
@@ -41,12 +41,12 @@
 							
 	                		<?php if($user->access_level == 3): ?>
 	                			<li><a class="admin" href="/admin">ADMIN</a></li>
-	                		<?php endif; ?></li>
+	                		<?php endif; ?>
 		                		<li><a href="/films">Films</a></li>
 		                		<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
 		                			<ul class="dropdown-menu">
 		                				<li><a href="/posts/users">People</a></li>
-		                				<li><a <a href="/posts">Posts</a></li>
+		                				<li><a href="/posts">Posts</a></li>
 		                			</ul>
 		                		</li>
 								<li><a href="/about">About</a></li>
@@ -59,7 +59,7 @@
 		                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Community <span class="caret"></span></a>
 		                			<ul class="dropdown-menu">
 		                				<li><a href="/posts/users">People</a></li>
-		                				<li><a <a href="/posts">Posts</a></li>
+		                				<li><a href="/posts">Posts</a></li>
 		                			</ul>
 		                		</li>
 								<li><a href="/about">About</a></li>
@@ -84,12 +84,12 @@
 			
 			<div id="social-icons">
 				<span class="sm">Follow us &nbsp;</span>
-				<a href="http://www.facebook.com/pages/Documentary-Educational-Resources/153516688607"><img class="social" src="/images/icons/facebook.png"></a>
-				<a href="https://twitter.com/docued"><img class="social" src="/images/icons/twitter.png"></a>
-				<a href="http://www.youtube.com/docued"><img class="social" src="/images/icons/youtube.png"></a>
-				<a href="http://vimeo.com/docued"><img class="social" src="/images/icons/vimeo.png"></a>
-				<a href="http://www.flickr.com/photos/der/"><img class="social" src="/images/icons/flickr.png"></a>
-				<a href="http://feeds.feedburner.com/DER_RSS"><img class="social" src="/images/icons/rss.png"></a>
+				<a href="http://www.facebook.com/pages/Documentary-Educational-Resources/153516688607"><img class="social" src="/images/icons/facebook.png" alt="Facebook"></a>
+				<a href="https://twitter.com/docued"><img class="social" src="/images/icons/twitter.png" alt="Twitter"></a>
+				<a href="http://www.youtube.com/docued"><img class="social" src="/images/icons/youtube.png" alt="YouTube"></a>
+				<a href="http://vimeo.com/docued"><img class="social" src="/images/icons/vimeo.png" alt="Vimeo"></a>
+				<a href="http://www.flickr.com/photos/der/"><img class="social" src="/images/icons/flickr.png" alt="Flickr"></a>
+				<a href="http://feeds.feedburner.com/DER_RSS"><img class="social" src="/images/icons/rss.png" alt="RSS"></a>
 			</div>
 		</footer>
 		
