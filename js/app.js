@@ -1,15 +1,25 @@
-	$( document ).ready(function() {
-	    // Toggle Upload form visibility	
-		$('.upload').click(function() {
-			$('#upload').toggleClass('hidden');
-		});
-	console.log( "ready!" );
+////////////////// USER PROFILE PAGE //////////////////
+
+// Toggle visibility of image upload form on user profile page //
+$( document ).ready(function() {	    	
+	$('.upload').click(function() {
+		$('#upload').toggleClass('hidden');
 	});
+});
 
-/* Error checking for film description length in admin section */
 
-	$('#recipient').keyup(function() {
-	
+////////////////// ADD A FILM FORM (ADMIN SECTION) //////////////////
+
+// Set autofocus to automatically target the first field in a form //
+$(document).ready(function() {
+	$('form:first *:input[type!=hidden]:first').focus();
+});
+
+
+// Error checking for film description length in admin section //
+// NOTE: this is not working Ð I think due to a conflict/quirk with Bootstrap. 
+$('#recipient').keyup(function() {
+
 	//Find out what's in the input field
 	var recipient = $(this).val();
 	
@@ -46,4 +56,4 @@
 	else {
 		$('#recipient-length').html("");
 	}
-	});
+});
