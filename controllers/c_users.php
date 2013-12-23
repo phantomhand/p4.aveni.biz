@@ -137,7 +137,7 @@ class users_controller extends base_controller {
     	
     	$client_files_head = Array(
     	'/css/bootstrap.css', 
-    	'css/main.css');
+    	'/css/main.css');
     	
     	$this->template->client_files_head = Utils::load_client_files($client_files_head);
 		
@@ -174,7 +174,9 @@ class users_controller extends base_controller {
          if ($filename == "/uploads/avatars/Invalid file type.") {
 	    	
         	# Redirect to error parameter
-	        Router::redirect("/users/profile");	
+	        Router::redirect("/users/profile/");
+	        
+	        echo "<?php $error = true ?>";	
         }
         
         else {

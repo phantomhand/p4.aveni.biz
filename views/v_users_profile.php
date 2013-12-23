@@ -5,8 +5,8 @@
 		
 		<hr class="hr">
 		
-		<div id="content-box"> <!-- content box -->
-			<div class="col-lg-4"> <!-- user pic, name, and created date -->
+		<div id="content-box"> <!-- Content box -->
+			<div class="col-lg-4"> <!-- User pic, name, and created date -->
 					
 				<h3><?=$user->first_name?> <?=$user->last_name?></h3>
 				<p>
@@ -17,7 +17,7 @@
 				</p>
 				
 				<label for="content">Your image:</label><br>
-				<!-- if user has not added an image, use the default -->
+				<!-- If user has not added an image, use the default -->
 				<?php if ( ($user->image == NULL) ): ?> 
 					<img class="avatar-pf id-profile" src="/images/avatar-blank.png" alt="User Pic" height="200" width="200"/>
 					<br>
@@ -27,14 +27,14 @@
 					<br>
 				<?php endif; ?>			
 					
-					<!-- image upload form -->
+					<!-- Image upload form -->
 					<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
 						<input type='file' class="input-xlarge" name='image'>
 						<p class="x-sm">jpg, gif, or png only</p>
 						<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
 					</form>	
 					
-					<!-- if there's an error, show this message --> <!-- WORK IN PROGRESS -->
+					<!-- If there's an error, show this message --> <!-- WORK IN PROGRESS -->
 					<?php if (isset ($error) ): ?>
 						<br>
 						<span class='error'>
@@ -44,21 +44,21 @@
 					<?php endif; ?>
 				<br>
 	
-			</div> <!-- end left side content -->
+			</div> <!-- End left side content -->
 			
-			<div class="col-lg-6"> <!-- middle content: add a post -->
+			<div class="col-lg-6"> <!-- Middle content: add a post -->
 						
 				<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
 					<label for='content'><h3>Add a New Post</h3></label><br>
 					<textarea name="content" class="addpost-profile form-inline" id='content'></textarea>
 					
-					<input type='submit' value='Add Post' class="button btn btn-primary btn-right">	
+					<input type='submit' value='Add Post' class="btn btn-primary btn-right">	
 				</form>
 								
-			</div> <!-- end middle -->
+			</div> <!-- End middle -->
 			
-		</div> <!-- end content box -->
+		</div> <!-- End content box -->
 		<br>
-	</div> <!-- /container -->
+	</div> <!-- End Container -->
 </div>
 

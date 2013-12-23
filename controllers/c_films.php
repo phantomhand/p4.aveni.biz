@@ -104,5 +104,4 @@ class films_controller extends base_controller {
 	    # Render the View
 	    echo $this->template;
 	}
-
 } # end of the class

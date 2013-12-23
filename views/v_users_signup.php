@@ -2,6 +2,7 @@
 	<div class="panel-body">
 		<div class="container">
 		
+			<!-- Sign up form -->
 			<form method='POST' action='/users/p_signup' class="form-signin" role="form">
 				<h2 class="form-signin-heading">Sign Up</h2>
 				<input type="text" class="form-control" placeholder="First name" name='first_name' required autofocus>
@@ -10,6 +11,8 @@
 				<input type="password" class="form-control" placeholder="Password" name='password' required>
 		
 				<button class="btn btn-lg btn-primary btn-block" value='Sign up' type="submit">Sign Up</button>
+				
+				<!-- Error message for existing users -->
 				<?php if ($error):?>
 					<br>
 					<div class="error">
@@ -18,7 +21,7 @@
 				<?php endif; ?>
 			</form>
 		
-		</div> <!-- /container -->
+		</div> <!-- End Container -->
 	</div>
 </div>
 
