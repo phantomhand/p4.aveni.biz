@@ -9,7 +9,7 @@ class posts_controller extends base_controller {
         	
         	# Setup view
 	        $this->template->content = View::instance('v_posts_members_only');
-	        $this->template->title   = "Members Only";
+	        $this->template->title   = "DER | Members Only";
         	
         	 # Render template
         	echo $this->template;
@@ -91,7 +91,7 @@ class posts_controller extends base_controller {
 	
 	    # Set up the View
 	    $this->template->content = View::instance("v_posts_users");
-	    $this->template->title   = "Users";
+	    $this->template->title   = "DER | Community Members";
 	
 	    # Build the query to get all the users
 	    $q = "SELECT *

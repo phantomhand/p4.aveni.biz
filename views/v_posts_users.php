@@ -4,6 +4,10 @@
 		<h2>DER Community</h2>
 		
 		<hr class="hr">	
+		
+		<h3>Community Members</h3>
+		
+		<br>
 	
 		<?php foreach($users as $user): ?>
 		

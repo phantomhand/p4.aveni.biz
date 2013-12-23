@@ -18,7 +18,8 @@ class films_controller extends base_controller {
         
         # Pass in template-specific CSS files
 	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-	    	<link rel="stylesheet" href="/css/signin.css" type="text/css">';
+	    	<link rel="stylesheet" href="/css/signin.css" type="text/css">
+	    	<script type="text/javascript" src="/js/app.js"></script>';
 
         # Render template
         echo $this->template;
