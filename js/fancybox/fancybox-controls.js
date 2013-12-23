@@ -1,15 +1,15 @@
 $(document).ready(function() {
 	$(".various").fancybox({
-		maxWidth	: 800,
-		maxHeight	: 600,
-		fitToView	: false,
+		maxWidth	: 640,
+		maxHeight	: 480,
+		fitToView	: true,
 		width		: '70%',
 		height		: '70%',
-		autoSize	: false,
+		autoSize	: true,
 		closeClick	: false,
 		openEffect	: 'none',
 		closeEffect	: 'none',
-		overlayColor : '#ff6346',
+		overlayColor : '#000000',
 		overlayOpacity : 1.0
 	});
 });
