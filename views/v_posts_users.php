@@ -13,11 +13,11 @@
 		
 			<div class="userlisting">
 				
-				<!-- If set, print this user's image -->
+				<!-- If set, show this user's image -->
 				<?php if(empty($user['image'])): ?>
 			    <img class="avatar-mini" src="/images/avatar-blank.png" alt="User pic"/>
 			    
-			    <!-- If not, print the default image -->
+			    <!-- If not, use the default image -->
 			    <?php else: ?>
 			    <img class="avatar-mini" src="<?=$user['image']?>" alt="Blabbr user pic"/>
 			    <?php endif; ?>
@@ -25,7 +25,7 @@
 			    <!-- Print this user's name -->
 			    <h4 class="title"><a href="/users/id/<?=$user['user_id']?>"><?=$user['first_name']?> <?=$user['last_name']?></a></h4>
 			
-			    <!-- If there exists a connection with this user, show a unfollow link -->
+			    <!-- If there exists a connection with this user, show an unfollow link -->
 			    <?php if(isset($connections[$user['user_id']])): ?>
 			        <a class="followbutton btn btn-primary" href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a>
 			
