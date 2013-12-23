@@ -28,11 +28,15 @@
 				<?php endif; ?>			
 					
 					<!-- Image upload form -->
-					<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
-						<input type='file' class="input-xlarge" name='image'>
-						<p class="x-sm">jpg, gif, or png only</p>
-						<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
-					</form>	
+					<p class="upload"><a href="#">Add or change your image</a></p>
+					<div id="upload" class="hidden">
+						
+						<form method='POST' enctype="multipart/form-data" action='/users/add_image/'>
+							<input type='file' class="input-xlarge" name='image'>
+							<p class="x-sm">jpg, gif, or png only</p>
+							<input type='submit' value='Submit' class="btn btn-primary" style="margin-top: 10px;">
+						</form>	
+					</div>
 					
 					<!-- If there's an error, show this message --> <!-- WORK IN PROGRESS -->
 					<?php if (isset ($error) ): ?>
@@ -49,7 +53,7 @@
 			<div class="col-lg-6"> <!-- Middle content: add a post -->
 						
 				<form role="form" class="form-inline" method='POST' action='/posts/p_add'>
-					<label for='content'><h3>Add a New Post</h3></label><br>
+					<h3>Add a New Post</h3>
 					<textarea name="content" class="addpost-profile form-inline" id='content'></textarea>
 					
 					<input type='submit' value='Add Post' class="btn btn-primary btn-right">	

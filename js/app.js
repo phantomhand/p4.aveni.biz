@@ -1,6 +1,14 @@
+	$( document ).ready(function() {
+	    // Toggle Upload form visibility	
+		$('.upload').click(function() {
+			$('#upload').toggleClass('hidden');
+		});
+	console.log( "ready!" );
+	});
+
 /* Error checking for film description length in admin section */
 
-$('#recipient').keyup(function() {
+	$('#recipient').keyup(function() {
 	
 	//Find out what's in the input field
 	var recipient = $(this).val();
@@ -38,4 +46,4 @@ $('#recipient').keyup(function() {
 	else {
 		$('#recipient-length').html("");
 	}
-});
+	});
