@@ -1,4 +1,4 @@
-/********** GENERAL **********/
+/*************** GENERAL LAYOUT ***************/
 
 body {
 	background-color: #fff !important;
@@ -47,8 +47,8 @@ a:active, a:hover {
 /* Header & Nav ********/
 
 .logo {
-	margin-top: -25px;
-	padding-bottom: 10px;
+	margin-top: -10px;
+	margin-bottom: -20px;
 }
 
 p.welcome {
@@ -92,22 +92,52 @@ ul.dropdown-menu {
 	color: #ddd;
 }
 
-/* About ********/
-
-#about {
-	width: 90%;
+.navbar-inverse {
+  background-color: #fff !important;
+  border-color: #999 !important;
+}
+	
+a.navbar-brand {
+	margin-left: -9999px;
+	color: black;
 }
 
-#content-box-about {
-	padding: 15px !important;
-	background-color: #fff;
-	width: 96.5%;
-	min-height: 1000px;
-	border: 1px solid #ddd;
+/* Footer ********/
+
+/* Social media links for footer */
+#social-icons {
+	float: right;
+	margin-top: -30px;
+	padding-right: 10px;
+}
+
+.social {
+	float: leftt;
+	opacity: .5;
+	height: 20px;
+	width: 20px;
+	margin-right: 5px;
+}
+
+.social:hover {
+	opacity: 1;
+}
+
+/* Home Page ********/
+
+.jumbotron {
+	position: relative;
+	border: 1px solid #ddd !important;
+	background: url(/images/kung-walk-jumbo-bg.jpg) no-repeat !important;
+	margin-top: -40px;
+}
+
+.home-row {
+	margin-top: -20px;
 }
 
 
-/********** FILMS **********/
+/************************** FILMS **************************/
 
 /* Film list page */
 .single {
@@ -145,19 +175,16 @@ h3.title {
 	padding: 15px !important;
 	background-color: #fff;
 	width: 96.5%;
-	min-height: 600px;
+	min-height: 550px;
 	border: 1px solid #ddd;
 }
 
-#info {
-	padding-bottom: 100px !important;
-}
 
 .film-lg {
-	height: 30%; 
-	width: 40%; 
-	float: left; 
-	margin-right: 25px;
+	height: 33%; 
+	width: 44%; 
+	float: right; 
+	margin-right: 0px;
 	margin-top: 5px;
 }
 
@@ -168,60 +195,21 @@ h3.title {
 
 }
 
-#gallery {
-	float: left;
+.fancybox-skin {
+    background: transparent;
+    box-shadow: none !important;
 }
 
-#info {
-	float: right;
-	margin-top: -40px !important;
-}
 
 #description {
 	margin-top: 25px;
 	max-width: 50%;
 	float: left;
-	margin-right: 65px;
+	margin-right: 25px;
 }
 
 
-/* Buttons */
-
-.btn-custom {
-  background-color: hsl(201, 100%, 46%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009ff4", endColorstr="#0098ea");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#009ff4), to(#0098ea));
-  background-image: -moz-linear-gradient(top, #009ff4, #0098ea);
-  background-image: -ms-linear-gradient(top, #009ff4, #0098ea);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #009ff4), color-stop(100%, #0098ea));
-  background-image: -webkit-linear-gradient(top, #009ff4, #0098ea);
-  background-image: -o-linear-gradient(top, #009ff4, #0098ea);
-  background-image: linear-gradient(#009ff4, #0098ea);
-  border-color: #0098ea #0098ea hsl(201, 100%, 45.5%);
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.03);
-  -webkit-font-smoothing: antialiased;
-}
-
-
-.btn-right {
-	margin-left: 1%;
-}
-
-
-.navbar-inverse {
-  background-color: #fff !important;
-  border-color: #999 !important;
-}
-	
-a.navbar-brand {
-	margin-left: -9999px;
-	color: black;
-}
-
-
-/********** USERS **********/
+/************************ USERS ************************/
 
 .avatar-lg {
 	border: 1px solid #ddd;
@@ -246,6 +234,7 @@ a.navbar-brand {
 .avatar-pf {
 	border: 1px solid #ddd;
 	margin-bottom: 5px;
+	overflow: hidden;
 }
 
 .avatar {
@@ -289,7 +278,7 @@ h4.title {
 	font-size: 1.13em;
 }
 
-/********** POSTS **********/
+/*********************** POSTS **************************/
 
 .post-block {
 	border: #DDD solid 1px;
@@ -306,6 +295,7 @@ h4.title {
 
 .postusername {
 	font-weight: bold;
+	color: #333 !important;
 	padding-bottom: 5px;
 	margin-top: -1px;
 	padding-left: 97px;
@@ -322,6 +312,22 @@ p.post-text {
 time {
 	font-size: x-small;
 }
+
+/******************** ABOUT ********************/
+
+#about {
+	width: 100%;
+}
+
+#content-box-about {
+	padding: 20px 25px 15px 25px !important;
+	background-color: #fff;
+	width: 96.5%;
+	min-height: 1000px;
+	border: 1px solid #ddd;
+}
+
+/********* TEXT AREAS, INPUTS, BUTTONS, & MISC *********/
 
 /* Text Areas ********/
 
@@ -350,41 +356,28 @@ time {
 	
 /* Buttons ********/
 
-.button {
-	font-size: 87.5%;
-    padding: 5px 15px;
-    text-decoration: none;
-    background: #C20202;
-    color: #FFF;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    border: solid 1px #BB0202;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.2);
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-user-select:none;
-    -moz-user-select:none;
-    -ms-user-select:none;
-    user-select:none;
+/* Buttons */
+
+.btn-custom {
+  background-color: hsl(201, 100%, 46%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009ff4", endColorstr="#0098ea");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#009ff4), to(#0098ea));
+  background-image: -moz-linear-gradient(top, #009ff4, #0098ea);
+  background-image: -ms-linear-gradient(top, #009ff4, #0098ea);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #009ff4), color-stop(100%, #0098ea));
+  background-image: -webkit-linear-gradient(top, #009ff4, #0098ea);
+  background-image: -o-linear-gradient(top, #009ff4, #0098ea);
+  background-image: linear-gradient(#009ff4, #0098ea);
+  border-color: #0098ea #0098ea hsl(201, 100%, 45.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.03);
+  -webkit-font-smoothing: antialiased;
 }
 
-.button:hover {
-    background: #991212;
-    border: solid 1px #BB0202;
-    text-decoration: none;
-}
 
-.button:active {
-    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    background: #2E5481;
-    border: solid 1px #203E5F;
+.btn-right {
+	margin-left: 1%;
 }
 
 a.followbutton, .postbutton {
@@ -404,7 +397,7 @@ a.followbutton, .postbutton {
     height: 20px;
 }
 
-/* Misc ********/
+/* HR ********/
 
 
 hr {
@@ -417,26 +410,6 @@ hr {
 	border: 0; border-top: 1px solid #999;
 }
 
-/* Social media links for footer */
-#social-icons {
-	float: right;
-	margin-top: -30px;
-	padding-right: 10px;
-}
-
-.social {
-	float: leftt;
-	opacity: .5;
-	height: 20px;
-	width: 20px;
-	margin-right: 5px;
-}
-
-.social:hover {
-	opacity: 1;
-}
-
-
 /* Other text styles */ 
 
 .sm {
@@ -448,38 +421,4 @@ hr {
 	margin-top: 5px;
 }
 
-.fancybox-skin {
-    background: transparent;
-    box-shadow: none !important;
-}
-
-.jumbotron {
-	background-image: url(/images/kung-walk-jumbo-bg.jpg) no-repeat;
-	border: 1px solid #ddd !important;
-	margin-top: -40px;
-}
-
-.home-row {
-	margin-top: -20px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* End styles */
