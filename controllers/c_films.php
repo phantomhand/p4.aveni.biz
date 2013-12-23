@@ -75,7 +75,7 @@ class films_controller extends base_controller {
 	    echo $this->template;
 	}
 	
-	    public function add() {
+	public function add() {
     	# Make sure user has admin access.
         if($this->user->access_level != 3) {
             # If not, redirect them to the films index
