@@ -13,13 +13,13 @@
     
 	    <div class="col-md-6">
 	      <h3>Films</h3>
-	      <p>We represent films with enduring value as documents of human societies and cultures. Our films portray unique subjectivities, and offer insights into the processes underlying social and cultural continuity and change. Our collection spans diverse genres and styles, and includes seminal works in the history of ethnographic filmmaking, v&eacute;rit&eacute; and personal documentary, and other forms of experimental and non-fiction filmmaking.</p>
-	      <p><a class="btn btn-primary preview-btn" role="button" href="/films/index">Browse Films &raquo;</a></p>
+	      <p>We represent films with enduring value as documents of human societies and cultures. Our films portray unique subjectivities and offer insights into the processes underlying social and cultural continuity and change. Our collection includes seminal works in the history of ethnographic filmmaking, v&eacute;rit&eacute; and personal documentary, and other forms of experimental and non-fiction filmmaking. <b>Browse our films to find out more.</b></p>
+	      <p><a class="btn btn-primary preview-btn" role="button" href="/films/index">View Films &raquo;</a></p>
 	    </div>
 	    
 	    <div class="col-md-6">
 	      <h3>Community</h3>
-	      <p>We help to build connections among a broad community of filmmakers, educators, students, archivists, organizers, and activists. Through fiscal sponsorship, workshops, and consulting, we support those working to develop media projects that document social and cultural practices, processes and beliefs. Our website serves as a place to connect with others within this community. Sign up to join the conversation.</p>
+	      <p>We help to build connections among a broad community of filmmakers, educators, students, archivists, organizers, and activists. Through fiscal sponsorship, workshops, and consulting, we support those working to develop media projects that document social and cultural practices, processes and beliefs. Our website serves as a place to connect with others within this community. <b>Sign up to join the conversation.</b></p>
 	      <p><a class="btn btn-primary preview-btn" role="button" href="/users/signup">Join Now &raquo;</a></p>
 	    </div>
 
