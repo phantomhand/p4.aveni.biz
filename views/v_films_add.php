@@ -30,7 +30,7 @@
 				<!-- <input type="text" placeholder="Subject 2" name='subject_2' class="form-control"> -->
 				<input type="text" placeholder="Institutional price" name='inst_price' class="form-control" required>
 				<input type="text" placeholder="Home use price" name='home_price' class="form-control">	
-				<input type="text" placeholder="Description (max 150 words)" name='description' class="form-control desc-input" required>
+				<textarea type="text" placeholder="Description (max 150 words)" name='description' id="recipient" class="form-control desc-input" required rows="10" cols="30" maxlength="25"></textarea>
 				</div>
 				
 				<div class="col-lg-3 form-signin">
@@ -54,6 +54,9 @@
 				<button class="btn-custom btn btn-primary" value='Add Film' type="submit">Add Film</button>
 			</form>
 			</div>
+			<input id="recipient" type="text" placeholder="Subject" name='subject_1' maxlength="25">
+			<span id="recipient-length"></span>
+			<span class="error" id="recipient-error"></span>
 		
 	</div> <!-- /container -->
 	<br>

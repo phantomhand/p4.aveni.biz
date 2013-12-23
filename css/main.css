@@ -338,7 +338,15 @@ time {
 }
 
 .desc-input {
-	height: 173.75px !important;
+	height: 25.75px !important;
+}
+
+#recipient-length {
+	background-color: green;
+}
+
+#recipient-error {
+	background-color: red;
 }
 	
 	
