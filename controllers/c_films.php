@@ -5,44 +5,6 @@ class films_controller extends base_controller {
         parent::__construct();
     }
 
-    public function add() {
-    	# Make sure user has admin access.
-        if($this->user->access_level != 3) {
-            # If not, redirect them to the films index
-	    	Router::redirect("/films");
-        }
-        
-        # Setup view
-        $this->template->content = View::instance('v_films_add');
-        $this->template->title   = "DER | Add New Film";
-        
-        # Pass in template-specific CSS files
-	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
-	    	<link rel="stylesheet" href="/css/signin.css" type="text/css">
-	    	<script type="text/javascript" src="/js/app.js"></script>';
-
-        # Render template
-        echo $this->template;
-    }
-
-    public function p_add() {
-        # Insert
-        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
-        DB::instance(DB_NAME)->insert('films', $_POST);
-        
-        # Redirect to same page (to refresh)
-	    Router::redirect("/films");      
-    }
-    
-    public function p_delete() {
-        # Delete this post
-	    $where_condition = "WHERE unique_id =".$_POST["unique_id"];
-		DB::instance(DB_NAME)->delete('films', $where_condition);
-        
-        # Redirect to same page (to refresh)
-	    Router::redirect("/films");      
-    }   
- 
 	public function index() {	 
  	    # Set up the View
 	    $this->template->content = View::instance('v_films_index');
@@ -86,6 +48,14 @@ class films_controller extends base_controller {
 	
 		# Run the query
 	    $film = DB::instance(DB_NAME)->select_row($q);
+	    
+	    # Screen for existing film by unique id
+	    $exists = $film['unique_id'] == true;
+	    
+	    # If film id does not exist, redirect to the film index
+	    if (!$exists){
+	    Router::redirect("/films");
+	    }
 	
 	    # Pass data to the View
 	    $this->template->content->film = $film;
@@ -104,4 +74,34 @@ class films_controller extends base_controller {
 	    # Render the View
 	    echo $this->template;
 	}
+	
+	    public function add() {
+    	# Make sure user has admin access.
+        if($this->user->access_level != 3) {
+            # If not, redirect them to the films index
+	    	Router::redirect("/films");
+        }
+        
+        # Setup view
+        $this->template->content = View::instance('v_films_add');
+        $this->template->title   = "DER | Add New Film";
+        
+        # Pass in template-specific CSS files
+	    $this->template->client_files_head = '<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+	    	<link rel="stylesheet" href="/css/signin.css" type="text/css">
+	    	<script type="text/javascript" src="/js/app.js"></script>';
+
+        # Render template
+        echo $this->template;
+    }
+
+    public function p_add() {
+        # Insert
+        # Note we didn't have to sanitize any of the $_POST data because we're using the insert method which does it for us
+        DB::instance(DB_NAME)->insert('films', $_POST);
+        
+        # Redirect to same page (to refresh)
+	    Router::redirect("/films");      
+    } 
+    
 } # end of the class
