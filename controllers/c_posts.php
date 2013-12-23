@@ -87,7 +87,7 @@ class posts_controller extends base_controller {
 	    echo $this->template;
 	}
 	
-		public function users() {
+	public function users() {
 	
 	    # Set up the View
 	    $this->template->content = View::instance("v_posts_users");
@@ -122,7 +122,7 @@ class posts_controller extends base_controller {
 	    echo $this->template;
 	}
 	
-		public function follow($user_id_followed) {
+	public function follow($user_id_followed) {
 	
 	    # Prepare the data array to be inserted
 	    $data = Array(
@@ -139,7 +139,7 @@ class posts_controller extends base_controller {
 	
 	}
 	
-		public function unfollow($user_id_followed) {
+	public function unfollow($user_id_followed) {
 	
 	    # Delete this connection
 	    $where_condition = 'WHERE user_id = '.$this->user->user_id.' AND user_id_followed = '.$user_id_followed;
