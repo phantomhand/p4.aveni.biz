@@ -24,6 +24,19 @@
 					<strong>User since:</strong> <?=date('F j, Y', $user['created'])?><br>
 					</p>
 					
+
+					
+					<div>
+					<!-- If there exists a connection with this user, show an unfollow link -->
+				    <?php if(isset($connections[$user['user_id']])): ?>
+				        <a class="btn btn-primary preview-btn" href='/posts/unfollow/<?=$user['user_id']?>'>Unfollow</a>
+				
+				    <!-- Otherwise, show the follow link -->
+				    <?php else: ?>
+				        <a class="btn btn-primary preview-btn" href='/posts/follow/<?=$user['user_id']?>'>Follow</a>
+				    <?php endif; ?>
+				    </div>
+					
 				</div> <!-- end user info -->
 				
 				
