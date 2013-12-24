@@ -54,7 +54,7 @@ The app.js file (/js/app.js) includes a few small custom functions:
 
 2) Uses the JQuery .focus() method to automatically focus on the first field in forms on the site. This is handy on the Add a Film form, which has many fields and which would otherwise place the focus somewhere in the middle of the form.
 
-3) Uses the JQuery .keyup() function to monitor the number of characters in the "description" input on the Add a Film form and present a warning message when approaching or exceeding the character limit. For some reason this is not working properly, although the code works fine in JSFiddle (http://jsfiddle.net/ECvsh/1/) and the browser console shows no errors. Some Stack Overflow posts suggest this may be due to a conflict with Bootstrap, but I have not resolved it yet. I've left the code in place as an additional Javascript component that is a work in progress.
+3) Uses the JQuery .keyup() function to monitor the number of characters in the "description" input on the Add a Film form and present a warning message when approaching or exceeding the character limit. For some reason this is not working properly, although the code works fine in JSFiddle (http://jsfiddle.net/ECvsh/1/) and the browser console shows no errors. Some Stack Overflow posts suggest this may be due to a conflict between .keyup() and Bootstrap, but I have not resolved it yet. I've left the code in place as an additional Javascript component that is a work in progress.
 
 --
 
