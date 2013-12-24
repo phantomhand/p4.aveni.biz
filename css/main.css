@@ -128,8 +128,12 @@ a.navbar-brand {
 .jumbotron {
 	position: relative;
 	border: 1px solid #ddd !important;
-	background: url(/images/kung-walk-jumbo-bg.jpg) no-repeat !important;
+	background: url(/images/kung-walk-jumbo-lg.jpg) no-repeat !important;
 	margin-top: -40px;
+}
+
+p.lead{
+	max-width: 575px;
 }
 
 .home-row {
