@@ -2,8 +2,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Welcome</h1>
-        <p class="lead">Founded in 1968, our mission is to promote thought-provoking documentary<br> 
-        film and media for learning about the people and cultures of the world.</p>
+        <p class="lead">Founded in 1968, our mission is to promote thought-provoking documentary film and media for learning about the people and cultures of the world.</p>
 	</div> 
 </div>
 
@@ -13,7 +12,7 @@
     
 	    <div class="col-md-6">
 	      <h3>Films</h3>
-	      <p>We represent films with enduring value as documents of human societies and cultures. Our films portray unique subjectivities and offer insights into the processes underlying social and cultural continuity and change. Our collection includes seminal works in the history of ethnographic filmmaking, v&eacute;rit&eacute; and personal documentary, and other forms of experimental and non-fiction filmmaking. <b>Browse our films to find out more.</b></p>
+	      <p>We represent films with enduring value as documents of human societies and cultures. Our films offer unique subjectivities and insights into the processes underlying cultural continuity and change. Our collection includes seminal works of ethnographic filmmaking, v&eacute;rit&eacute; and personal documentary, and other forms of experimental and non-fiction filmmaking. <b>Browse our films to learn more.</b></p>
 	      <p><a class="btn btn-primary preview-btn" role="button" href="/films/index">View Films &raquo;</a></p>
 	    </div>
 	    
