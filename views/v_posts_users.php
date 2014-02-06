@@ -13,11 +13,11 @@
 		
 			<div class="userlisting">
 				
-				<!-- If set, show this user's image -->
+				<!-- If user has not added an image, show the default image -->
 				<?php if(empty($user['image'])): ?>
 			    <img class="avatar-mini" src="/images/avatar-blank.png" alt="User pic"/>
 			    
-			    <!-- If not, use the default image -->
+			    <!-- If they have uploaded an image, show it -->
 			    <?php else: ?>
 			    <img class="avatar-mini" src="<?=$user['image']?>" alt="Blabbr user pic"/>
 			    <?php endif; ?>
