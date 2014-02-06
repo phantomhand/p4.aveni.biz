@@ -9,7 +9,7 @@
 			<?php if(empty($user->image)): ?>
 				<img class="avatar" src="/images/avatar-blank.png" height="80" width="80"  alt="User pic"/>
 				
-			<!-- If they have uploaded an image, show it  -->
+			<!-- If they have uploaded an image, show it -->
 			<?php else: ?>
 				<img class="avatar" src="<?=$user->image?>" height="80" width="80"  alt="User pic"/>
 			<?php endif; ?>
