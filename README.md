@@ -25,22 +25,22 @@ FEATURES:
  	
 Non-account holders:
 	
-	• Users can browse a selection of films and watch a video preview of each title. For this, no account is needed.
-	• Users can sign up for an account, and can then log in to access more features of the site.
+	¬• Users can browse a selection of films and watch a video preview of each title. For this, no account is needed.
+	¬• Users can sign up for an account, and can then log in to access more features of the site.
 
 Account-holding users:
 
-	• Users can log in and out of the site.
-	• Logged in users can post messages to the Community area.
-	• Logged in users can see a list of other members of the Community area.
-	• Logged in users can follow or unfollow other members to see their posts.
-	• Logged in users can upload a profile image to be used as their avatar across the site.
-	• Logged in users can click on the names of other users to view their profile (targeted by user id number).
+	¬• Users can log in and out of the site.
+	¬• Logged in users can post messages to the Community area.
+	¬• Logged in users can see a list of other members of the Community area.
+	¬• Logged in users can follow or unfollow other members to see their posts.
+	¬• Logged in users can upload a profile image to be used as their avatar across the site.
+	¬• Logged in users can click on the names of other users to view their profile (targeted by user id number).
 
-Administator-level users (see "additional info" below for admin log-in credentials):
+Administator-level users (contact me for admin log-in credentials):
 
-	• Admin users can access an admin panel (via an additional link in the site's main navigation).
-	• Admins can access a form to add new films into the database.
+	¬• Admin users can access an admin panel (via an additional link in the site's main navigation).
+	¬• Admins can access a form to add new films into the database.
 	
 --
 
@@ -60,20 +60,15 @@ The app.js file (/js/app.js) includes a few small custom functions:
 
 ADDITIONAL INFORMATION:
 
-To access the Add a Film form, one must have admin-level privileges. Here are credentials:
+To access the Add a Film form, one must have admin-level privileges (please contact me for credentials). 
 
-http://p4.aveni.biz/users/login
-
-email: admin@website.com
-password: DWA15 (case sensitive)
-
-Once logged in, you'll see an ADMIN link in the navigation menu at the top of the header (this link is not available to non-admin users). Click this to go the the Admin panel, which currently has only one option – Add a film to the database.
+Once logged in, you'll see an ADMIN link in the navigation menu at the top of the header (this link is not available to non-admin users). Click this to go the the Admin panel, which currently has only one option √ê Add a film to the database.
 
 This form allows input of the essential pieces of information for listing films on the site (e.g. title, director, running time, year released). These fields are required (marked by a *), while the rest are optional.
 
 Two notes on the "add film" form:
 
-1) The "Video link" url must be taken from the YouTube embed code (remember to add the http://) – the regular YouTube url will not work correctly.
+1) The "Video link" url must be taken from the YouTube embed code (remember to add the http://) √ê the regular YouTube url will not work correctly.
 
 2) The field for "Film image filename" allows the administrator to point to files already in the site's 'images' directory by simply listing the filename (e.g. dead-birds.jpg). If no filename is specified, a default image will be used as a placeholder. This is in part because the database auto increments an id number (unique_id) to each new title posted, and I did not find an easy way to upload a file as past of the same POST. I would like to add an uploader similar to the one used for the user profile image. For now, the image file must be added to the images directory and the filename entered here.
 
@@ -83,7 +78,7 @@ REFLECTIONS:
 
 I learned a great deal while doing this project and will continue to work on it locally to add additional user and admin features.
 
-This was my first experience building a responsive site using Bootstrap and it functions best when viewed anywhere from full screen down to 999px window width. It sometimes behaves strangely when reduced beyond that – another thing I will continue to work on locally.
+This was my first experience building a responsive site using Bootstrap and it functions best when viewed anywhere from full screen down to 999px window width. It sometimes behaves strangely when reduced beyond that √ê another thing I will continue to work on locally.
 
 Thank you to Susan and to the TF's for their help throughout the semester.
 
